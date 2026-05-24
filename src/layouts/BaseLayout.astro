@@ -1,0 +1,73 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = '会社員のためのお金・副業・AI活用メディア' } = Astro.props;
+const siteTitle = '億速';
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | {siteTitle}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={`${title} | ${siteTitle}`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href={Astro.url} />
+  <!-- AdSense placeholder -->
+  <!-- ADSENSE_SCRIPT_HERE -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: #f8f9fa;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    header {
+      background: #0a1628;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header a { color: #fff; text-decoration: none; font-size: 1.4rem; font-weight: 700; }
+    header nav a { font-size: 0.9rem; margin-left: 20px; opacity: 0.8; }
+    header nav a:hover { opacity: 1; }
+    main {
+      max-width: 860px;
+      margin: 32px auto;
+      padding: 0 16px;
+    }
+    footer {
+      text-align: center;
+      padding: 32px 16px;
+      color: #888;
+      font-size: 0.85rem;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 64px;
+    }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/">億速</a>
+    <nav>
+      <a href="/articles/">記事一覧</a>
+      <a href="/about/">このサイトについて</a>
+    </nav>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    <p>&copy; 2026 億速 | <a href="/privacy/">プライバシーポリシー</a> | <a href="/disclaimer/">免責事項</a></p>
+    <p style="margin-top:8px;font-size:0.8rem;">本サイトはアフィリエイト広告を利用しています。</p>
+  </footer>
+</body>
+</html>
