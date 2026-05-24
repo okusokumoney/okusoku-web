@@ -1,0 +1,21 @@
+{
+  "note": "アフィリエイトURLが確定したらここのURLを差し替えてください。AFFILIATE_XXX_URL の部分をすべて実URLに置換します。",
+  "links": {
+    "AFFILIATE_SBI_URL": "",
+    "AFFILIATE_RAKUTEN_URL": "",
+    "AFFILIATE_CW_URL": "",
+    "AFFILIATE_LANCERS_URL": "",
+    "AFFILIATE_CHATGPT_URL": "",
+    "AFFILIATE_MF_URL": "",
+    "AFFILIATE_RC_URL": ""
+  },
+  "programs": [
+    {"id": "AFFILIATE_SBI_URL",      "name": "SBI証券",             "category": "投資・NISA", "register_url": "https://www.a8.net/"},
+    {"id": "AFFILIATE_RAKUTEN_URL",  "name": "楽天証券",             "category": "投資・NISA", "register_url": "https://www.a8.net/"},
+    {"id": "AFFILIATE_CW_URL",       "name": "クラウドワークス",     "category": "副業",       "register_url": "https://www.a8.net/"},
+    {"id": "AFFILIATE_LANCERS_URL",  "name": "ランサーズ",           "category": "副業",       "register_url": "https://www.a8.net/"},
+    {"id": "AFFILIATE_CHATGPT_URL",  "name": "ChatGPT Plus",        "category": "AI活用",     "register_url": "https://www.a8.net/"},
+    {"id": "AFFILIATE_MF_URL",       "name": "マネーフォワード ME", "category": "お金の基本", "register_url": "https://www.a8.net/"},
+    {"id": "AFFILIATE_RC_URL",       "name": "楽天カード",           "category": "節約",       "register_url": "https://www.a8.net/"}
+  ]
+}
