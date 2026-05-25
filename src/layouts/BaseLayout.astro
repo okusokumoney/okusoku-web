@@ -17,6 +17,14 @@ const siteTitle = '億速';
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <link rel="canonical" href={Astro.url} />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SJ81N63HQP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SJ81N63HQP');
+  </script>
   <!-- AdSense placeholder -->
   <!-- ADSENSE_SCRIPT_HERE -->
   <style>
