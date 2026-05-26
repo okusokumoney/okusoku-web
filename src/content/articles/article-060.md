@@ -1,5 +1,6 @@
 ---
 title: "【投資の考え方⑧】長期投資ロードマップ・資産3,000万円を目指す考え方と全体設計"
+image: "/images/thumbs/article-060.jpg"
 description: "「資産3,000万円」という数字を、あなたは現実的に考えたことがありますか？"
 pubDate: "2026-05-24"
 category: "投資・NISA"

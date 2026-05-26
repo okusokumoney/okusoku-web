@@ -1,5 +1,6 @@
 ---
 title: "【億万長者思考⑦】「1億円なんて自分には無理」と思っている人が知らない目標設定の法則"
+image: "/images/thumbs/article-047.jpg"
 description: "あなたが今持っている「お金の目標」は、どれくらいの金額ですか？"
 pubDate: "2026-05-24"
 category: "思考法"

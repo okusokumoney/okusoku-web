@@ -1,5 +1,6 @@
 ---
 title: "【億万長者思考⑧】会社員が10年で経済的自由を手にするための「逆算思考」全体設計"
+image: "/images/thumbs/article-059.jpg"
 description: "「10年後に経済的自由を手に入れる」という目標を、今日の行動に落とし込めていますか？"
 pubDate: "2026-05-24"
 category: "思考法"

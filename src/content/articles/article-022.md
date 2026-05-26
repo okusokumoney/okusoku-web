@@ -1,5 +1,6 @@
 ---
 title: "【AI活用入門③】副業リサーチが10分で終わる・AIツール4選と使い分けの完全手順"
+image: "/images/thumbs/article-022.jpg"
 description: "あなたは副業のリサーチに、毎回1時間以上かけていませんか？"
 pubDate: "2026-05-24"
 category: "AI活用"

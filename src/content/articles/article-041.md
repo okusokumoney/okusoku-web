@@ -1,5 +1,6 @@
 ---
 title: "【億万長者思考⑥】「副業を始めたいのに動けない」会社員が見落としている思考の習慣"
+image: "/images/thumbs/article-041.jpg"
 description: "あなたは今、給料以外の収入源を持っていますか？"
 pubDate: "2026-05-24"
 category: "思考法"

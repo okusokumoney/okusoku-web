@@ -1,5 +1,6 @@
 ---
 title: "【AI活用入門⑤】AIで情報収集・要約を自動化して副業に活かす3つの手順"
+image: "/images/thumbs/article-034.jpg"
 description: "あなたは毎日、どれくらいの時間を「情報収集」に使っていますか？"
 pubDate: "2026-05-24"
 category: "AI活用"

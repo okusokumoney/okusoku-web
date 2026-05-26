@@ -1,5 +1,6 @@
 ---
 title: "【億万長者思考②】「頑張っているのに豊かになれない」会社員が無意識に続けている3つの習慣"
+image: "/images/thumbs/article-017.jpg"
 description: "あなたは今日、「どうせ自分には無理だな」と思ったことが1つでもありましたか？"
 pubDate: "2026-05-24"
 category: "思考法"

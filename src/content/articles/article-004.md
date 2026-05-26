@@ -1,5 +1,6 @@
 ---
 title: "1日15分のAI活用で、会社員の副業リサーチと文章作成が半分の時間になる理由"
+image: "/images/thumbs/article-004.jpg"
 description: "実は、その感覚こそが今のあなたと「AI活用している人」の差を静かに広げています。"
 pubDate: "2026-05-24"
 category: "お金の基本"

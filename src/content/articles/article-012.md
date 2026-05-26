@@ -1,5 +1,6 @@
 ---
 title: "【投資の考え方①】投資をしないことが一番リスクな理由・会社員が知っておきたいお金の基本"
+image: "/images/thumbs/article-012.jpg"
 description: "あなたは「投資は怖いから、貯金だけにしておく」と考えていませんか？"
 pubDate: "2026-05-24"
 category: "投資・NISA"

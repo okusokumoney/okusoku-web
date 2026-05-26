@@ -1,5 +1,6 @@
 ---
 title: "【投資の考え方⑤】長期投資で資産が増える「複利」のしくみをやさしく解説"
+image: "/images/thumbs/article-036.jpg"
 description: "「複利」という言葉を聞いたことはありますか？"
 pubDate: "2026-05-24"
 category: "投資・NISA"

@@ -1,5 +1,6 @@
 ---
 title: "【AI活用入門⑧】AIで副業月収を3倍にする人の「プロンプト実践設計術」と5つのテンプレート"
+image: "/images/thumbs/article-058.jpg"
 description: "AIを「便利なツール」として使うだけで終わっていませんか？"
 pubDate: "2026-05-24"
 category: "AI活用"

@@ -1,5 +1,6 @@
 ---
 title: "下落相場で慌てない人が知っている「長期投資の心構え」3つのポイント"
+image: "/images/thumbs/article-054.jpg"
 description: "「投資の考え方」特別追加回 ／ 全14回予定"
 pubDate: "2026-05-24"
 category: "投資・NISA"

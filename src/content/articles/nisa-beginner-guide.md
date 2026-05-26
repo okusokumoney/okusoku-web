@@ -1,5 +1,6 @@
 ---
 title: "NISAを始める前に知っておきたい3つのこと【会社員向け】"
+image: "/images/thumbs/nisa-beginner-guide.jpg"
 description: "投資未経験の会社員がNISAを安全に始めるための基本知識をまとめました。"
 pubDate: "2026-05-24"
 category: "投資・NISA"

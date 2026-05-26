@@ -1,5 +1,6 @@
 ---
 title: "【生活費最適化⑤】家賃・住居費を見直すと人生が変わる3つの理由"
+image: "/images/thumbs/article-037.jpg"
 description: "今の家賃は、あなたの手取り収入の何パーセントを占めていますか？"
 pubDate: "2026-05-24"
 category: "節約"

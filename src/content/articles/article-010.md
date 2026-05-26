@@ -1,5 +1,6 @@
 ---
 title: "【AI活用入門①】会社員こそAIを使うべき3つの理由・時間がない人ほど効果が出るツールの使い方"
+image: "/images/thumbs/article-010.jpg"
 description: "あなたは今、「AIって自分には早い」と感じていませんか？"
 pubDate: "2026-05-24"
 category: "AI活用"

@@ -1,5 +1,6 @@
 ---
 title: "【AI活用入門④】ChatGPTでSNS・ブログ文章を10分で量産する3ステップ・副業コンテンツ制作の時短術"
+image: "/images/thumbs/article-028.jpg"
 description: "「文章を書くのが苦手で、ブログや SNS の更新が続かない」と感じたことはありませんか？"
 pubDate: "2026-05-24"
 category: "AI活用"

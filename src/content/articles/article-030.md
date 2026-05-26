@@ -1,5 +1,6 @@
 ---
 title: "【投資の考え方④】投資初心者がやりがちな3つの失敗と回避のヒント・知っておくと判断が変わる落とし穴"
+image: "/images/thumbs/article-030.jpg"
 description: "「投資を始めたのに、なぜかうまくいかない」という感覚はありませんか？"
 pubDate: "2026-05-24"
 category: "投資・NISA"

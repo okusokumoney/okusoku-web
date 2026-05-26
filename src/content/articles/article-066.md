@@ -1,5 +1,6 @@
 ---
 title: "【投資の考え方⑨】1,000株で年3万円・配当投資という選択肢と毎月キャッシュフローの作り方"
+image: "/images/thumbs/article-066.jpg"
 description: "投資で利益を得るといえば、「株を安く買って高く売る」しか方法はないと思っていませんか？"
 pubDate: "2026-05-24"
 category: "投資・NISA"

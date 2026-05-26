@@ -1,5 +1,6 @@
 ---
 title: "【生活費最適化②】節約しているのに貯まらない人が見落としている「支出の仕分け」とは"
+image: "/images/thumbs/article-019.jpg"
 description: "あなたは毎月の支出を、「固定費・変動費・浪費」の3種類に分けて把握できていますか？"
 pubDate: "2026-05-24"
 category: "節約"

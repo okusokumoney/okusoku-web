@@ -1,5 +1,6 @@
 ---
 title: "【お金の基本②】固定費削減の正しい優先順位・会社員が最初に手をつけるべき3つの支出"
+image: "/images/thumbs/article-014.jpg"
 description: "あなたは節約しようと思ったとき、最初にどこから手をつけますか？"
 pubDate: "2026-05-24"
 category: "お金の基本"

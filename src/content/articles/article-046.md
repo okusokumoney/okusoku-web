@@ -1,5 +1,6 @@
 ---
 title: "【AI活用入門⑦】「AIで稼ぐって何をすればいいの？」に答える月3万円への最短ロードマップ"
+image: "/images/thumbs/article-046.jpg"
 description: "「AIを使えば副業で稼げる」と聞いたことはありますか？"
 pubDate: "2026-05-24"
 category: "AI活用"

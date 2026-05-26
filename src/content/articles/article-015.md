@@ -1,5 +1,6 @@
 ---
 title: "【副業の始め方②】副業選びで失敗しない3つの基準・会社員が副業を選ぶ前に決めること"
+image: "/images/thumbs/article-015.jpg"
 description: "あなたは今、「何の副業を選べばいいか」で迷ったまま、なかなか動き出せていませんか？"
 pubDate: "2026-05-24"
 category: "副業"

@@ -1,5 +1,6 @@
 ---
 title: "【投資の考え方⑦】株式・債券・不動産の違いとは・資産クラスを知ると投資の全体像が見える"
+image: "/images/thumbs/article-048.jpg"
 description: "「株式・債券・不動産」という言葉を聞いたとき、それぞれの違いをすぐに説明できますか？"
 pubDate: "2026-05-24"
 category: "投資・NISA"

@@ -1,5 +1,6 @@
 ---
 title: "【AI活用入門⑩】週110分の副業作業がAIエージェントで25分になる全自動化設計"
+image: "/images/thumbs/article-070.jpg"
 description: "「AI活用入門」第10回 ／ 全14回予定"
 pubDate: "2026-05-24"
 category: "AI活用"

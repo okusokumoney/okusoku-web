@@ -1,5 +1,6 @@
 ---
 title: "【生活費最適化①】生活費を見直すだけで年間30万円変わる話・会社員が最初に知るべき支出の仕組み"
+image: "/images/thumbs/article-013.jpg"
 description: "あなたは今、毎月の生活費がいくらかかっているか、すぐに答えられますか？"
 pubDate: "2026-05-24"
 category: "節約"

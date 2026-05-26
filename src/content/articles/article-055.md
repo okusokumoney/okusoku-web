@@ -1,5 +1,6 @@
 ---
 title: "お金が自然に貯まる「仕組み型生活」の作り方・意志力に頼らずお金を増やす設計法"
+image: "/images/thumbs/article-055.jpg"
 description: "「生活費最適化」特別追加回 ／ 全14回予定"
 pubDate: "2026-05-24"
 category: "節約"
