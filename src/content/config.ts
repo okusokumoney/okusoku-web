@@ -8,6 +8,9 @@ const articles = defineCollection({
     pubDate: z.string(),
     category: z.string(),
     image: z.string().optional(),
+    type: z.enum(['article', 'news']).optional(),
+    sourceUrl: z.string().optional(),
+    sourceName: z.string().optional(),
     tags: z.array(z.string()).optional(),
     affiliate: z.array(z.object({
       label: z.string(),

@@ -6,8 +6,9 @@ export interface Props {
   pubDate: string;
   description?: string;
   image?: string;
+  type?: string;
 }
-const { title, slug, category, pubDate, description, image } = Astro.props;
+const { title, slug, category, pubDate, description, image, type } = Astro.props;
 
 const categoryColors: Record<string, string> = {
   '投資・NISA': '#1a5fb4',
@@ -28,7 +29,11 @@ const color = categoryColors[category] ?? '#555';
     <div class="card-category" style={`background:${color}`}>{category}</div>
   )}
   <div class="card-body">
-    {image && <p class="card-cat-badge" style={`color:${color}`}>{category}</p>}
+    <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:3px;">
+    {type === 'news' && <span class="badge-news">最新ニュース</span>}
+    {image && <p class="card-cat-badge" style={`color:${color};margin:0`}>{category}</p>}
+    {!image && !type && <p class="card-cat-badge" style={`color:${color};margin:0`}></p>}
+  </div>
     <p class="card-title">{title}</p>
     {description && <p class="card-desc">{description}</p>}
     <p class="card-date">{pubDate}</p>
@@ -101,6 +106,7 @@ const color = categoryColors[category] ?? '#555';
     overflow: hidden;
   }
   .card-date { font-size: 0.75rem; color: #999; }
+  .badge-news { font-size: 0.68rem; font-weight: 700; background: #e53935; color: #fff; padding: 2px 6px; border-radius: 3px; white-space: nowrap; }
   @media (max-width: 500px) {
     .card-thumb-wrap { width: 110px; }
   }
