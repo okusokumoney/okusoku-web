@@ -1,45 +1,55 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import Pagination from '../components/Pagination.astro';
+import SideBar from '../components/SideBar.astro';
 import { getCollection } from 'astro:content';
 
+const PAGE_SIZE = 20;
 const allArticles = await getCollection('articles');
-const articles = allArticles
-  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
-  .slice(0, 12);
-
-const categories = ['投資・NISA', '副業', 'AI活用', 'お金の基本', '節約', '思考法'];
+const sorted = allArticles.sort((a, b) =>
+  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+const articles = sorted.slice(0, PAGE_SIZE);
 ---
 <BaseLayout title="トップ">
-  <!-- ヒーロー -->
-  <section style="background:#0a1628;color:#fff;border-radius:16px;padding:40px 32px;margin-bottom:40px;text-align:center;">
-    <p style="font-size:0.9rem;letter-spacing:0.1em;opacity:0.7;margin-bottom:12px;">会社員のためのお金・副業・AI活用メディア</p>
-    <h1 style="font-size:2rem;font-weight:700;margin-bottom:16px;">億速</h1>
-    <p style="opacity:0.85;max-width:480px;margin:0 auto;">NISA・副業・AI活用で資産を増やす実践情報を毎日更新。難しいお金の話をシンプルに。</p>
-  </section>
+  <Fragment slot="sidebar">
+    <SideBar />
+  </Fragment>
 
-  <!-- カテゴリナビ -->
-  <nav style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;">
-    {categories.map(cat => (
-      <a href={`/articles/?cat=${encodeURIComponent(cat)}`}
-        style="background:#fff;border:1px solid #ddd;border-radius:20px;padding:6px 16px;font-size:0.85rem;text-decoration:none;color:#333;">
-        {cat}
-      </a>
-    ))}
-  </nav>
+  <div class="page-header">
+    <h1>最新記事</h1>
+    <p class="article-count">全{sorted.length}件</p>
+  </div>
 
-  <!-- 記事グリッド -->
-  <h2 style="font-size:1.2rem;font-weight:700;margin-bottom:20px;border-bottom:2px solid #0a1628;padding-bottom:8px;">最新記事</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-bottom:40px;">
-    {articles.map(article => (
-      <a href={`/articles/${article.slug}/`} style="background:#fff;border-radius:12px;padding:20px;text-decoration:none;color:#1a1a1a;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:block;transition:box-shadow 0.2s;">
-        <p style="font-size:0.75rem;color:#888;margin-bottom:8px;">{article.data.category} · {article.data.pubDate}</p>
-        <h3 style="font-size:1rem;font-weight:700;line-height:1.4;">{article.data.title}</h3>
-        {article.data.description && <p style="font-size:0.85rem;color:#555;margin-top:8px;">{article.data.description}</p>}
-      </a>
+  <div class="article-list">
+    {articles.map(a => (
+      <ArticleCard
+        title={a.data.title}
+        slug={a.slug}
+        category={a.data.category}
+        pubDate={a.data.pubDate}
+        description={a.data.description}
+      />
     ))}
   </div>
 
-  <div style="text-align:center;">
-    <a href="/articles/" style="display:inline-block;border:2px solid #0a1628;border-radius:8px;padding:12px 32px;font-weight:700;text-decoration:none;color:#0a1628;">記事一覧を見る</a>
-  </div>
+  {totalPages > 1 && (
+    <Pagination currentPage={1} totalPages={totalPages} baseUrl="/" />
+  )}
 </BaseLayout>
+
+<style>
+  .page-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #0a1628;
+  }
+  .page-header h1 { font-size: 1.1rem; font-weight: 700; }
+  .article-count { font-size: 0.82rem; color: #888; }
+  .article-list { display: flex; flex-direction: column; gap: 10px; }
+</style>

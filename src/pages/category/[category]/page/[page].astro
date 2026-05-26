@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ArticleCard from '../../../../components/ArticleCard.astro';
+import Pagination from '../../../../components/Pagination.astro';
+import SideBar from '../../../../components/SideBar.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 20;
+  const allArticles = await getCollection('articles');
+  const categories = ['投資・NISA', '副業', 'AI活用', 'お金の基本', '節約', '思考法'];
+  const paths = [];
+
+  for (const category of categories) {
+    const filtered = allArticles
+      .filter(a => a.data.category === category)
+      .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+    const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
+    for (let page = 2; page <= totalPages; page++) {
+      const articles = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+      paths.push({
+        params: { category, page: String(page) },
+        props: { articles, totalPages, currentPage: page, category, total: filtered.length },
+      });
+    }
+  }
+  return paths;
+}
+
+const { articles, totalPages, currentPage, category, total } = Astro.props;
+---
+<BaseLayout title={`${category}の記事一覧 ${currentPage}ページ目`}>
+  <Fragment slot="sidebar">
+    <SideBar />
+  </Fragment>
+
+  <div class="page-header">
+    <h1>{category}</h1>
+    <p class="article-count">全{total}件 / {currentPage}ページ目</p>
+  </div>
+
+  <div class="article-list">
+    {articles.map((a: any) => (
+      <ArticleCard
+        title={a.data.title}
+        slug={a.slug}
+        category={a.data.category}
+        pubDate={a.data.pubDate}
+        description={a.data.description}
+      />
+    ))}
+  </div>
+
+  <Pagination currentPage={currentPage} totalPages={totalPages} baseUrl={`/category/${category}`} />
+</BaseLayout>
+
+<style>
+  .page-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #0a1628;
+  }
+  .page-header h1 { font-size: 1.1rem; font-weight: 700; }
+  .article-count { font-size: 0.82rem; color: #888; }
+  .article-list { display: flex; flex-direction: column; gap: 10px; }
+</style>

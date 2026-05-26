@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import Pagination from '../../components/Pagination.astro';
+import SideBar from '../../components/SideBar.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 20;
+  const allArticles = await getCollection('articles');
+  const sorted = allArticles.sort((a, b) =>
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+  const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2;
+    const articles = sorted.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+    return { params: { page: String(page) }, props: { articles, totalPages, currentPage: page, total: sorted.length } };
+  });
+}
+
+const { articles, totalPages, currentPage, total } = Astro.props;
+---
+<BaseLayout title={`記事一覧 ${currentPage}ページ目`}>
+  <Fragment slot="sidebar">
+    <SideBar />
+  </Fragment>
+
+  <div class="page-header">
+    <h1>最新記事</h1>
+    <p class="article-count">全{total}件 / {currentPage}ページ目</p>
+  </div>
+
+  <div class="article-list">
+    {articles.map((a: any) => (
+      <ArticleCard
+        title={a.data.title}
+        slug={a.slug}
+        category={a.data.category}
+        pubDate={a.data.pubDate}
+        description={a.data.description}
+      />
+    ))}
+  </div>
+
+  <Pagination currentPage={currentPage} totalPages={totalPages} baseUrl="/" />
+</BaseLayout>
+
+<style>
+  .page-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #0a1628;
+  }
+  .page-header h1 { font-size: 1.1rem; font-weight: 700; }
+  .article-count { font-size: 0.82rem; color: #888; }
+  .article-list { display: flex; flex-direction: column; gap: 10px; }
+</style>

@@ -5,6 +5,7 @@ export interface Props {
 }
 const { title, description = '会社員のためのお金・副業・AI活用メディア' } = Astro.props;
 const siteTitle = '億速';
+const categories = ['投資・NISA', '副業', 'AI活用', 'お金の基本', '節約', '思考法'];
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,51 +32,111 @@ const siteTitle = '億速';
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
-      background: #f8f9fa;
+      background: #f0f2f5;
       color: #1a1a1a;
       line-height: 1.7;
+      font-size: 15px;
     }
-    header {
+    /* ヘッダー */
+    .site-header {
       background: #0a1628;
       color: #fff;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    header a { color: #fff; text-decoration: none; font-size: 1.4rem; font-weight: 700; }
-    header nav a { font-size: 0.9rem; margin-left: 20px; opacity: 0.8; }
-    header nav a:hover { opacity: 1; }
-    main {
-      max-width: 860px;
-      margin: 32px auto;
       padding: 0 16px;
     }
-    footer {
-      text-align: center;
-      padding: 32px 16px;
-      color: #888;
-      font-size: 0.85rem;
-      border-top: 1px solid #e0e0e0;
-      margin-top: 64px;
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 12px 0;
     }
-    footer a { color: #888; }
+    .site-logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .site-logo span { color: #41c9b4; }
+    /* カテゴリナビ */
+    .cat-nav {
+      background: #162032;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .cat-nav::-webkit-scrollbar { display: none; }
+    .cat-nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      padding: 0 16px;
+    }
+    .cat-nav a {
+      display: block;
+      padding: 10px 14px;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: all 0.15s;
+    }
+    .cat-nav a:hover { color: #fff; border-bottom-color: #41c9b4; }
+    /* メインラッパー */
+    .site-wrapper {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 20px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .site-wrapper { grid-template-columns: 1fr; }
+      .sidebar-col { display: none; }
+    }
+    /* フッター */
+    footer {
+      background: #0a1628;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 24px 16px;
+      font-size: 0.82rem;
+      margin-top: 40px;
+    }
+    footer a { color: rgba(255,255,255,0.6); }
   </style>
 </head>
 <body>
-  <header>
-    <a href="/">億速</a>
-    <nav>
-      <a href="/articles/">記事一覧</a>
-      <a href="/about/">このサイトについて</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="site-logo">億<span>速</span></a>
+      <p style="font-size:0.8rem;opacity:0.6;">会社員のお金・副業・AI活用メディア</p>
+    </div>
   </header>
-  <main>
-    <slot />
-  </main>
+  <nav class="cat-nav">
+    <div class="cat-nav-inner">
+      <a href="/">すべて</a>
+      {categories.map(cat => (
+        <a href={`/category/${encodeURIComponent(cat)}/`}>{cat}</a>
+      ))}
+    </div>
+  </nav>
+  <div class="site-wrapper">
+    <main>
+      <slot />
+    </main>
+    <div class="sidebar-col">
+      <slot name="sidebar" />
+    </div>
+  </div>
   <footer>
-    <p>&copy; 2026 億速 | <a href="/privacy/">プライバシーポリシー</a> | <a href="/disclaimer/">免責事項</a></p>
-    <p style="margin-top:8px;font-size:0.8rem;">本サイトはアフィリエイト広告を利用しています。</p>
+    <p>&copy; 2026 億速 | <a href="/privacy/">プライバシーポリシー</a> | <a href="/disclaimer/">免責事項</a> | <a href="/about/">このサイトについて</a></p>
+    <p style="margin-top:6px;">本サイトはアフィリエイト広告を利用しています。</p>
   </footer>
 </body>
 </html>

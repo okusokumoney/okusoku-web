@@ -1,0 +1,68 @@
+---
+export interface Props {
+  currentPage: number;
+  totalPages: number;
+  baseUrl: string; // e.g. "/" or "/category/副業"
+}
+const { currentPage, totalPages, baseUrl } = Astro.props;
+
+function pageUrl(n: number) {
+  if (n === 1) return baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+  const base = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
+  return `${base}page/${n}/`;
+}
+
+const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
+const showPages = pages.filter(p =>
+  p === 1 || p === totalPages || Math.abs(p - currentPage) <= 2
+);
+---
+<nav class="pagination">
+  {currentPage > 1 && (
+    <a href={pageUrl(currentPage - 1)} class="page-btn">← 前へ</a>
+  )}
+  {showPages.map((p, i) => {
+    const prev = showPages[i - 1];
+    return (
+      <>
+        {prev && p - prev > 1 && <span class="ellipsis">…</span>}
+        <a href={pageUrl(p)} class={`page-btn ${p === currentPage ? 'active' : ''}`}>{p}</a>
+      </>
+    );
+  })}
+  {currentPage < totalPages && (
+    <a href={pageUrl(currentPage + 1)} class="page-btn">次へ →</a>
+  )}
+</nav>
+
+<style>
+  .pagination {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    margin: 32px 0;
+    flex-wrap: wrap;
+  }
+  .page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    background: #fff;
+  }
+  .page-btn:hover { background: #f0f0f0; }
+  .page-btn.active {
+    background: #0a1628;
+    color: #fff;
+    border-color: #0a1628;
+    font-weight: 700;
+  }
+  .ellipsis { line-height: 36px; color: #999; }
+</style>

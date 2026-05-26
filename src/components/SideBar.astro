@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+
+const allArticles = await getCollection('articles');
+const sorted = allArticles.sort((a, b) =>
+  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+);
+const latest = sorted.slice(0, 10);
+
+const categories = ['投資・NISA', '副業', 'AI活用', 'お金の基本', '節約', '思考法'];
+const catCounts = Object.fromEntries(
+  categories.map(c => [c, allArticles.filter(a => a.data.category === c).length])
+);
+
+const categoryColors: Record<string, string> = {
+  '投資・NISA': '#1a5fb4',
+  '副業':       '#2e7d32',
+  'AI活用':     '#6a0dad',
+  'お金の基本': '#e65100',
+  '節約':       '#00695c',
+  '思考法':     '#b71c1c',
+};
+---
+<aside class="sidebar">
+  <!-- カテゴリ一覧 -->
+  <div class="sidebar-block">
+    <h2 class="sidebar-title">カテゴリ</h2>
+    <ul class="cat-list">
+      {categories.map(cat => (
+        <li>
+          <a href={`/category/${encodeURIComponent(cat)}/`} class="cat-link"
+            style={`border-left-color:${categoryColors[cat]}`}>
+            <span class="cat-name">{cat}</span>
+            <span class="cat-count">{catCounts[cat]}件</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- 新着記事 -->
+  <div class="sidebar-block">
+    <h2 class="sidebar-title">新着記事</h2>
+    <ul class="latest-list">
+      {latest.map(a => (
+        <li>
+          <a href={`/articles/${a.slug}/`} class="latest-link">
+            <span class="latest-cat" style={`background:${categoryColors[a.data.category] ?? '#555'}`}>
+              {a.data.category}
+            </span>
+            {a.data.title}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- アフィリエイト枠 -->
+  <div class="sidebar-block">
+    <h2 class="sidebar-title">おすすめ</h2>
+    <a href="https://af.moshimo.com/af/c/click?a_id=5584857&p_id=54&pc_id=54&pl_id=637&url=https%3A%2F%2Fwww.rakuten.co.jp%2F"
+      target="_blank" rel="noopener sponsored"
+      class="affiliate-banner">
+      <span style="font-size:1.2rem;">🛒</span>
+      <span>楽天市場で<br/>お得に買い物</span>
+    </a>
+  </div>
+</aside>
+
+<style>
+  .sidebar { display: flex; flex-direction: column; gap: 20px; }
+  .sidebar-block {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .sidebar-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: #0a1628;
+    color: #fff;
+    padding: 8px 14px;
+    margin: 0;
+  }
+  .cat-list { list-style: none; padding: 8px 0; margin: 0; }
+  .cat-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    text-decoration: none;
+    color: #1a1a1a;
+    border-left: 4px solid #ccc;
+    font-size: 0.9rem;
+    transition: background 0.1s;
+  }
+  .cat-link:hover { background: #f5f5f5; }
+  .cat-count { font-size: 0.78rem; color: #888; }
+  .latest-list { list-style: none; padding: 8px 0; margin: 0; }
+  .latest-list li { border-bottom: 1px solid #f0f0f0; }
+  .latest-list li:last-child { border-bottom: none; }
+  .latest-link {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .latest-link:hover { background: #f5f5f5; }
+  .latest-cat {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .affiliate-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    font-weight: 700;
+    background: #fff9e6;
+  }
+  .affiliate-banner:hover { background: #fff3cd; }
+</style>

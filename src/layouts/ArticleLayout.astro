@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import SideBar from '../components/SideBar.astro';
 export interface Props {
   title: string;
   description?: string;
@@ -8,40 +9,35 @@ export interface Props {
 }
 const { title, description, pubDate, category } = Astro.props;
 
-// もしもアフィリエイト IDs
-const MOSHIMO_RAKUTEN_AID   = '5584857'; // 楽天市場
-const MOSHIMO_RAKUTENBOOKS_AID = '5584862'; // 楽天ブックス
+const MOSHIMO_RAKUTENBOOKS_AID = '5584862';
+const MOSHIMO_RAKUTEN_AID = '5584857';
 
 function rakutenBooksLink(url: string) {
   return `https://af.moshimo.com/af/c/click?a_id=${MOSHIMO_RAKUTENBOOKS_AID}&p_id=56&pc_id=56&pl_id=637&url=${encodeURIComponent(url)}`;
 }
-function rakutenLink(url: string) {
-  return `https://af.moshimo.com/af/c/click?a_id=${MOSHIMO_RAKUTEN_AID}&p_id=54&pc_id=54&pl_id=637&url=${encodeURIComponent(url)}`;
-}
 
-// カテゴリ別おすすめ書籍
 const BOOKS: Record<string, {title: string; author: string; desc: string; url: string}[]> = {
   '投資・NISA': [
-    { title: 'お金の大学', author: '両@リベ大', desc: '貯める・稼ぐ・増やす・守る・使うの5つのチカラを解説。NISA入門の定番書。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%81%8A%E9%87%91%E3%81%AE%E5%A4%A7%E5%AD%A6+%E4%B8%A1' },
-    { title: 'ジェイソン流お金の増やし方', author: '厚切りジェイソン', desc: '米国インデックス投資一択の考え方をシンプルに解説。初心者向け。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%82%B8%E3%82%A7%E3%82%A4%E3%82%BD%E3%83%B3%E6%B5%81%E3%81%8A%E9%87%91' },
+    { title: 'お金の大学', author: '両@リベ大', desc: 'NISA・保険・副業をわかりやすく解説。会社員の入門書。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%81%8A%E9%87%91%E3%81%AE%E5%A4%A7%E5%AD%A6+%E4%B8%A1' },
+    { title: 'ジェイソン流お金の増やし方', author: '厚切りジェイソン', desc: '米国インデックス投資をシンプルに解説。初心者向け。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%82%B8%E3%82%A7%E3%82%A4%E3%82%BD%E3%83%B3%E6%B5%81%E3%81%8A%E9%87%91' },
   ],
   '副業': [
-    { title: '副業の学校', author: '田中祐一', desc: '会社員が副業で月5万円稼ぐための具体的な手順を解説。', url: 'https://books.rakuten.co.jp/search?sitem=%E5%89%AF%E6%A5%AD+%E4%BC%9A%E7%A4%BE%E5%93%A1+%E5%A7%8B%E3%82%81%E6%96%B9' },
-    { title: 'AI時代の副業術', author: '', desc: 'AIを活用した副業の最新手法を解説。ChatGPT活用も収録。', url: 'https://books.rakuten.co.jp/search?sitem=AI+%E5%89%AF%E6%A5%AD+%E4%BC%9A%E7%A4%BE%E5%93%A1' },
+    { title: '副業で月5万円稼ぐ', author: '', desc: '会社員が副業で月5万円稼ぐための具体的な手順を解説。', url: 'https://books.rakuten.co.jp/search?sitem=%E5%89%AF%E6%A5%AD+%E4%BC%9A%E7%A4%BE%E5%93%A1+%E6%9C%885%E4%B8%87' },
+    { title: 'AI時代の副業術', author: '', desc: 'AIを活用した副業の最新手法を解説。', url: 'https://books.rakuten.co.jp/search?sitem=AI+%E5%89%AF%E6%A5%AD+%E4%BC%9A%E7%A4%BE%E5%93%A1' },
   ],
   'AI活用': [
-    { title: 'ChatGPT仕事術', author: '', desc: 'ChatGPTを仕事に活用する実践テクニックを網羅。', url: 'https://books.rakuten.co.jp/search?sitem=ChatGPT+%E4%BB%95%E4%BA%8B%E8%A1%93' },
+    { title: 'ChatGPT仕事術', author: '', desc: 'ChatGPTを仕事に活用する実践テクニック。', url: 'https://books.rakuten.co.jp/search?sitem=ChatGPT+%E4%BB%95%E4%BA%8B%E8%A1%93' },
     { title: 'AI活用の教科書', author: '', desc: '生成AIを業務に組み込む方法を解説した入門書。', url: 'https://books.rakuten.co.jp/search?sitem=AI%E6%B4%BB%E7%94%A8+%E6%95%99%E7%A7%91%E6%9B%B8' },
   ],
   'お金の基本': [
     { title: 'お金の大学', author: '両@リベ大', desc: '家計・保険・投資の基本をすべて学べる一冊。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%81%8A%E9%87%91%E3%81%AE%E5%A4%A7%E5%AD%A6+%E4%B8%A1' },
-    { title: '難しいことはわかりませんが、お金の増やし方を教えてください', author: '山崎元・大橋弘祐', desc: '投資初心者のバイブル。対話形式でわかりやすい。', url: 'https://books.rakuten.co.jp/search?sitem=%E9%9B%A3%E3%81%97%E3%81%84%E3%81%93%E3%81%A8%E3%81%AF%E3%82%8F%E3%81%8B%E3%82%8A%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8C+%E3%81%8A%E9%87%91' },
+    { title: '難しいことはわかりませんが、お金の増やし方を教えてください', author: '山崎元・大橋弘祐', desc: '投資初心者のバイブル。対話形式でわかりやすい。', url: 'https://books.rakuten.co.jp/search?sitem=%E9%9B%A3%E3%81%97%E3%81%84%E3%81%93%E3%81%A8%E3%81%AF+%E3%81%8A%E9%87%91%E3%81%AE%E5%A2%97%E3%82%84%E3%81%97%E6%96%B9' },
   ],
   '節約': [
     { title: '節約・貯金の教科書', author: '', desc: '固定費削減から始める家計改善の実践書。', url: 'https://books.rakuten.co.jp/search?sitem=%E7%AF%80%E7%B4%84+%E8%B2%AF%E9%87%91+%E4%BC%9A%E7%A4%BE%E5%93%A1' },
   ],
   '思考法': [
-    { title: 'お金持ちの思考法', author: '', desc: '収入を増やすより支出を減らすより大切な「思考の転換」を解説。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%81%8A%E9%87%91%E6%8C%81%E3%81%A1+%E6%80%9D%E8%80%83%E6%B3%95' },
+    { title: 'お金持ちの思考法', author: '', desc: '収入・支出より大切な「思考の転換」を解説。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%81%8A%E9%87%91%E6%8C%81%E3%81%A1+%E6%80%9D%E8%80%83%E6%B3%95' },
     { title: 'お金の大学', author: '両@リベ大', desc: 'お金への考え方から実践まで。会社員必読の一冊。', url: 'https://books.rakuten.co.jp/search?sitem=%E3%81%8A%E9%87%91%E3%81%AE%E5%A4%A7%E5%AD%A6+%E4%B8%A1' },
   ],
 };
@@ -49,68 +45,78 @@ const BOOKS: Record<string, {title: string; author: string; desc: string; url: s
 const books = BOOKS[category] ?? BOOKS['お金の基本'];
 ---
 <BaseLayout title={title} description={description}>
+  <Fragment slot="sidebar">
+    <SideBar />
+  </Fragment>
+
   <article>
-    <header style="margin-bottom:2rem;">
-      <p style="color:#888;font-size:0.85rem;margin-bottom:8px;">
-        <a href="/articles/" style="color:#888;">記事一覧</a> &rsaquo; {category}
-      </p>
-      <h1 style="font-size:1.6rem;font-weight:700;line-height:1.4;margin-bottom:12px;">{title}</h1>
-      <p style="color:#888;font-size:0.85rem;">{pubDate}</p>
-    </header>
+    <!-- パンくず -->
+    <p style="font-size:0.8rem;color:#888;margin-bottom:12px;">
+      <a href="/" style="color:#888;">トップ</a> &rsaquo;
+      <a href={`/category/${encodeURIComponent(category)}/`} style="color:#888;">{category}</a> &rsaquo;
+      <span>{title.length > 30 ? title.slice(0, 30) + '…' : title}</span>
+    </p>
 
-    <!-- ADSENSE_ARTICLE_TOP -->
-
-    <div class="article-body">
-      <slot />
-    </div>
-
-    <!-- ADSENSE_ARTICLE_BOTTOM -->
-
-    <!-- おすすめ書籍（楽天ブックス アフィリエイト） -->
-    <div style="margin:40px 0;">
-      <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:16px;padding-left:12px;border-left:4px solid #0a1628;">この記事に関連するおすすめ書籍</h2>
-      <p style="font-size:0.75rem;color:#888;margin-bottom:12px;">※本ページはアフィリエイト広告を含みます</p>
-      <div style="display:grid;gap:12px;">
-        {books.map(book => (
-          <a href={rakutenBooksLink(book.url)} target="_blank" rel="noopener sponsored"
-            style="display:flex;gap:16px;background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:16px;text-decoration:none;color:#1a1a1a;">
-            <div style="flex:1;">
-              <p style="font-size:0.75rem;color:#bf0000;font-weight:700;margin-bottom:4px;">楽天ブックス</p>
-              <p style="font-weight:700;margin-bottom:4px;">📚 {book.title}{book.author ? `（${book.author}）` : ''}</p>
-              <p style="font-size:0.85rem;color:#555;">{book.desc}</p>
-              <p style="font-size:0.8rem;color:#bf0000;margin-top:8px;font-weight:700;">楽天で見る →</p>
-            </div>
-          </a>
-        ))}
+    <div style="background:#fff;border-radius:8px;padding:24px;border:1px solid #e0e0e0;">
+      <div style="margin-bottom:16px;">
+        <span style="font-size:0.78rem;color:#888;">{pubDate}</span>
+        <h1 style="font-size:1.4rem;font-weight:700;line-height:1.5;margin-top:6px;">{title}</h1>
       </div>
-    </div>
 
-    <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:16px;margin:32px 0;font-size:0.85rem;">
-      ⚠️ 本記事はAI生成コンテンツを含みます。投資・副業の判断はご自身の責任で行ってください。
-    </div>
+      <!-- ADSENSE_ARTICLE_TOP -->
 
-    <div style="background:#0a1628;color:#fff;border-radius:12px;padding:24px;margin:32px 0;text-align:center;">
-      <p style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">さらに詳しい記事はnoteで無料公開中</p>
-      <a href="https://note.com/okusokumoney" target="_blank" rel="noopener"
-        style="display:inline-block;background:#41c9b4;color:#fff;padding:12px 32px;border-radius:6px;font-weight:700;text-decoration:none;margin-top:8px;">
-        億速 note を見る →
-      </a>
+      <div class="article-body">
+        <slot />
+      </div>
+
+      <!-- ADSENSE_ARTICLE_BOTTOM -->
+
+      <!-- おすすめ書籍 -->
+      <div style="margin:32px 0 0;">
+        <h2 style="font-size:1rem;font-weight:700;margin-bottom:12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">この記事に関連するおすすめ書籍</h2>
+        <p style="font-size:0.72rem;color:#888;margin-bottom:10px;">※本ページはアフィリエイト広告を含みます</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          {books.map(book => (
+            <a href={rakutenBooksLink(book.url)} target="_blank" rel="noopener sponsored"
+              style="display:flex;gap:14px;background:#fafafa;border:1px solid #e8e8e8;border-radius:8px;padding:14px;text-decoration:none;color:#1a1a1a;">
+              <div style="flex:1;">
+                <p style="font-size:0.7rem;color:#bf0000;font-weight:700;margin-bottom:3px;">📚 楽天ブックス</p>
+                <p style="font-weight:700;font-size:0.9rem;margin-bottom:4px;">{book.title}{book.author ? `（${book.author}）` : ''}</p>
+                <p style="font-size:0.8rem;color:#555;margin-bottom:6px;">{book.desc}</p>
+                <p style="font-size:0.78rem;color:#bf0000;font-weight:700;">楽天ブックスで見る →</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div style="background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:14px;margin:24px 0;font-size:0.82rem;">
+        ⚠️ 本記事はAI生成コンテンツを含みます。投資・副業の判断はご自身の責任で行ってください。
+      </div>
+
+      <div style="background:#0a1628;color:#fff;border-radius:10px;padding:20px;text-align:center;">
+        <p style="font-size:1rem;font-weight:700;margin-bottom:8px;">さらに詳しい記事はnoteで無料公開中</p>
+        <a href="https://note.com/okusokumoney" target="_blank" rel="noopener"
+          style="display:inline-block;background:#41c9b4;color:#fff;padding:10px 28px;border-radius:6px;font-weight:700;text-decoration:none;margin-top:6px;">
+          億速 note を見る →
+        </a>
+      </div>
     </div>
   </article>
 </BaseLayout>
 
 <style>
-  .article-body { line-height: 1.8; }
-  .article-body h2 { font-size: 1.3rem; font-weight: 700; margin: 2rem 0 1rem; padding-left: 12px; border-left: 4px solid #0a1628; }
-  .article-body h3 { font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; }
+  .article-body { line-height: 1.85; }
+  .article-body h2 { font-size: 1.2rem; font-weight: 700; margin: 2rem 0 1rem; padding: 10px 14px; background: #f5f5f5; border-left: 4px solid #0a1628; }
+  .article-body h3 { font-size: 1.05rem; font-weight: 700; margin: 1.5rem 0 0.5rem; border-bottom: 1px solid #e0e0e0; padding-bottom: 4px; }
   .article-body p { margin-bottom: 1rem; }
   .article-body ul, .article-body ol { margin: 1rem 0 1rem 1.5rem; }
   .article-body li { margin-bottom: 0.4rem; }
   .article-body strong { font-weight: 700; }
-  .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+  .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.92rem; }
   .article-body th { background: #0a1628; color: #fff; padding: 10px 12px; text-align: left; }
   .article-body td { padding: 10px 12px; border: 1px solid #ddd; }
-  .article-body tr:nth-child(even) td { background: #f5f5f5; }
+  .article-body tr:nth-child(even) td { background: #f8f8f8; }
   .affiliate-box { background: #f0f8ff; border: 2px solid #0a1628; border-radius: 10px; padding: 20px; margin: 2rem 0; }
   .affiliate-box .btn { display: inline-block; background: #e44; color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; margin-top: 10px; }
 </style>
