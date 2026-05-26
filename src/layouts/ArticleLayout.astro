@@ -126,6 +126,11 @@ const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\
       </div>
 
       <link rel="stylesheet" href="https://unpkg.com/@waline/client@v3/dist/waline.css" />
+      <style>
+        #waline .waline-container { display: flex; flex-direction: column; }
+        #waline .wl-editor-wrapper { order: 2; margin-top: 16px; }
+        #waline .wl-comment-wrapper { order: 1; }
+      </style>
       <script is:inline>
         (function() {
           var s = document.createElement('script');
