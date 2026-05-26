@@ -5,9 +5,9 @@ import { getCollection } from 'astro:content';
 // 外部RSSフィード（ビルド時取得）
 // ============================================================
 const EXTERNAL_FEEDS = [
-  { name: 'マネーの達人',      url: 'https://manetatsu.com/feed/',                          color: '#1a5fb4' },
+  { name: 'NHK経済ニュース',   url: 'https://www.nhk.or.jp/rss/news/cat5.xml',             color: '#1a5fb4' },
   { name: 'ITmedia AI+',      url: 'https://rss.itmedia.co.jp/rss/2.0/aiplus.xml',         color: '#6a0dad' },
-  { name: '東洋経済オンライン', url: 'https://toyokeizai.net/list/rss',                      color: '#e65100' },
+  { name: 'ZUU online',       url: 'https://zuuonline.com/feed',                            color: '#2e7d32' },
 ];
 
 function parseRSSItems(xml: string, limit = 4): { title: string; link: string }[] {
@@ -24,7 +24,10 @@ function parseRSSItems(xml: string, limit = 4): { title: string; link: string }[
 const externalFeeds = await Promise.all(
   EXTERNAL_FEEDS.map(async feed => {
     try {
-      const res = await fetch(feed.url, { signal: AbortSignal.timeout(6000) });
+      const res = await fetch(feed.url, {
+        signal: AbortSignal.timeout(6000),
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; okusoku-bot/1.0)' },
+      });
       const xml = await res.text();
       return { ...feed, items: parseRSSItems(xml, 4) };
     } catch {
