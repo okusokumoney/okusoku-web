@@ -6,12 +6,30 @@ export async function getStaticPaths() {
   const articles = await getCollection('articles');
   return articles.map(article => ({
     params: { slug: article.slug },
-    props: { article },
+    props: { article, allArticles: articles },
   }));
 }
 
-const { article } = Astro.props;
+const { article, allArticles } = Astro.props;
 const { Content } = await article.render();
+
+// 同カテゴリの記事（自分を除く・新しい順・最大30件）
+const related = allArticles
+  .filter(a => a.slug !== article.slug && a.data.category === article.data.category)
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+  .slice(0, 30);
+
+// 他カテゴリのピックアップ（最新3件ずつ）
+const otherCategories = ['投資・NISA', '副業', 'AI活用', 'お金の基本', '節約', '思考法']
+  .filter(c => c !== article.data.category);
+
+const otherPicks = otherCategories.flatMap(cat =>
+  allArticles
+    .filter(a => a.data.category === cat)
+    .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+    .slice(0, 3)
+    .map(a => ({ ...a, _cat: cat }))
+);
 ---
 <ArticleLayout
   title={article.data.title}
@@ -19,5 +37,67 @@ const { Content } = await article.render();
   pubDate={article.data.pubDate}
   category={article.data.category}
 >
+  <!-- 同カテゴリ記事リンク集（記事本文の上） -->
+  {related.length > 0 && (
+    <div class="related-links-box">
+      <p class="related-links-title">▼ {article.data.category} の記事一覧</p>
+      <ul class="related-links-list">
+        {related.map(r => (
+          <li><a href={`/articles/${r.slug}/`}>{r.data.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <!-- 記事本文 -->
   <Content />
+
+  <!-- 他カテゴリのピックアップ -->
+  {otherPicks.length > 0 && (
+    <div class="related-links-box" style="margin-top:2rem;">
+      <p class="related-links-title">▼ 他のカテゴリの記事</p>
+      <ul class="related-links-list">
+        {otherPicks.map(r => (
+          <li><a href={`/articles/${r.slug}/`}>[{r._cat}] {r.data.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  )}
 </ArticleLayout>
+
+<style>
+  .related-links-box {
+    background: #f5f7fa;
+    border: 1px solid #dde1e7;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 2rem;
+    font-size: 0.88rem;
+  }
+  .related-links-title {
+    font-weight: 700;
+    color: #0a1628;
+    margin-bottom: 10px;
+  }
+  .related-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    column-count: 1;
+  }
+  @media (min-width: 600px) {
+    .related-links-list { column-count: 2; }
+  }
+  .related-links-list li {
+    margin-bottom: 6px;
+    break-inside: avoid;
+  }
+  .related-links-list a {
+    color: #1a5fb4;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .related-links-list a:hover {
+    text-decoration: underline;
+  }
+</style>
