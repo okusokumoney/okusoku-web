@@ -43,6 +43,10 @@ const BOOKS: Record<string, {title: string; author: string; desc: string; url: s
 };
 
 const books = BOOKS[category] ?? BOOKS['お金の基本'];
+
+const pageUrl = Astro.url.href;
+const xShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}&via=okusokumoney`;
+const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\//, '')}`;
 ---
 <BaseLayout title={title} description={description}>
   <Fragment slot="sidebar">
@@ -61,6 +65,12 @@ const books = BOOKS[category] ?? BOOKS['お金の基本'];
       <div style="margin-bottom:16px;">
         <span style="font-size:0.78rem;color:#888;">{pubDate}</span>
         <h1 style="font-size:1.4rem;font-weight:700;line-height:1.5;margin-top:6px;">{title}</h1>
+      </div>
+
+      <!-- シェアボタン -->
+      <div class="share-buttons">
+        <a href={xShareUrl} target="_blank" rel="noopener" class="share-btn share-x">X でシェア</a>
+        <a href={hatenaUrl} target="_blank" rel="noopener" class="share-btn share-hatena">はてブ</a>
       </div>
 
       <!-- ADSENSE_ARTICLE_TOP -->
@@ -101,6 +111,32 @@ const books = BOOKS[category] ?? BOOKS['お金の基本'];
           億速 note を見る →
         </a>
       </div>
+
+      <!-- 記事末シェアボタン -->
+      <div class="share-buttons" style="margin-top:24px;">
+        <span style="font-size:0.85rem;font-weight:700;color:#555;">この記事をシェア：</span>
+        <a href={xShareUrl} target="_blank" rel="noopener" class="share-btn share-x">X でシェア</a>
+        <a href={hatenaUrl} target="_blank" rel="noopener" class="share-btn share-hatena">はてブに追加</a>
+      </div>
+
+      <!-- コメント欄（Disqus） -->
+      <div style="margin-top:32px;">
+        <div id="disqus_thread" data-url={pageUrl} data-id={Astro.url.pathname}></div>
+        <script is:inline>
+          var disqus_config = function () {
+            var el = document.getElementById('disqus_thread');
+            this.page.url = el.dataset.url;
+            this.page.identifier = el.dataset.id;
+          };
+          (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://DISQUS_SHORTNAME.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>コメントを表示するにはJavaScriptを有効にしてください。</noscript>
+      </div>
     </div>
   </article>
 </BaseLayout>
@@ -119,4 +155,10 @@ const books = BOOKS[category] ?? BOOKS['お金の基本'];
   .article-body tr:nth-child(even) td { background: #f8f8f8; }
   .affiliate-box { background: #f0f8ff; border: 2px solid #0a1628; border-radius: 10px; padding: 20px; margin: 2rem 0; }
   .affiliate-box .btn { display: inline-block; background: #e44; color: #fff; padding: 10px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; margin-top: 10px; }
+  .share-buttons { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 16px 0; }
+  .share-btn { display: inline-block; padding: 7px 16px; border-radius: 4px; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
+  .share-x { background: #000; color: #fff; }
+  .share-x:hover { background: #333; }
+  .share-hatena { background: #00a4de; color: #fff; }
+  .share-hatena:hover { background: #0086b8; }
 </style>
