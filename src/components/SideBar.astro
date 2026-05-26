@@ -35,7 +35,8 @@ const externalFeeds = await Promise.all(
     }
   })
 );
-const activeFeeds = externalFeeds.filter(f => f.items.length > 0);
+// 全フィードの記事を混在させて日付順（取得順）でフラット化
+const allExternalItems = externalFeeds.flatMap(f => f.items).slice(0, 15);
 
 const allArticles = await getCollection('articles');
 const sorted = allArticles.sort((a, b) =>
@@ -91,21 +92,21 @@ const categoryColors: Record<string, string> = {
     </ul>
   </div>
 
-  <!-- 外部サイト最新情報 -->
-  {activeFeeds.map(feed => (
+  <!-- 外部サイト最新情報（混在表示） -->
+  {allExternalItems.length > 0 && (
     <div class="sidebar-block">
-      <h2 class="sidebar-title" style={`background:${feed.color}`}>{feed.name}</h2>
+      <h2 class="sidebar-title">最新ニュース</h2>
       <ul class="latest-list">
-        {feed.items.map(item => (
+        {allExternalItems.map(item => (
           <li>
             <a href={item.link} target="_blank" rel="noopener" class="latest-link ext-link">
-              {item.title.length > 36 ? item.title.slice(0, 36) + '…' : item.title}
+              {item.title.length > 38 ? item.title.slice(0, 38) + '…' : item.title}
             </a>
           </li>
         ))}
       </ul>
     </div>
-  ))}
+  )}
 
   <!-- アフィリエイト枠 -->
   <div class="sidebar-block">
