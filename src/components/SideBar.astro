@@ -4,11 +4,8 @@ import { getCollection } from 'astro:content';
 // ============================================================
 // 外部RSSフィード（ビルド時取得）
 // ============================================================
-const EXTERNAL_FEEDS = [
-  { name: 'NHK経済ニュース',   url: 'https://www.nhk.or.jp/rss/news/cat5.xml',             color: '#1a5fb4' },
-  { name: 'ITmedia AI+',      url: 'https://rss.itmedia.co.jp/rss/2.0/aiplus.xml',         color: '#6a0dad' },
-  { name: 'ZUU online',       url: 'https://zuuonline.com/feed',                            color: '#2e7d32' },
-];
+// 外部RSS：不適切コンテンツ混入リスクのため無効化
+const EXTERNAL_FEEDS: { name: string; url: string; color: string }[] = [];
 
 function parseRSSItems(xml: string, limit = 4): { title: string; link: string }[] {
   const items = [...xml.matchAll(/<item[\s>]([\s\S]*?)<\/item>/g)].slice(0, limit);
