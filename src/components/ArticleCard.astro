@@ -37,7 +37,7 @@ const color = categoryColors[category] ?? '#555';
   </div>
     <p class="card-title">{title}</p>
     {description && <p class="card-desc">{description}</p>}
-    <p class="card-date">{pubDate}</p>
+    <p class="card-date">{pubDate.slice(0, 10).replace(/-/g, '.')}</p>
   </div>
 </a>
 
