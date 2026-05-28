@@ -81,6 +81,13 @@ const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\
 
       <!-- ADSENSE_ARTICLE_BOTTOM -->
 
+      <!-- 記事末シェアボタン -->
+      <div class="share-buttons" style="margin-top:24px;">
+        <span style="font-size:0.85rem;font-weight:700;color:#555;">この記事をシェア：</span>
+        <a href={xShareUrl} target="_blank" rel="noopener" class="share-btn share-x">X でシェア</a>
+        <a href={hatenaUrl} target="_blank" rel="noopener" class="share-btn share-hatena">はてブに追加</a>
+      </div>
+
       <!-- おすすめ書籍 -->
       <div style="margin:32px 0 0;">
         <h2 style="font-size:1rem;font-weight:700;margin-bottom:12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">この記事に関連するおすすめ書籍</h2>
@@ -98,21 +105,6 @@ const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\
             </a>
           ))}
         </div>
-      </div>
-
-      <div style="background:#0a1628;color:#fff;border-radius:10px;padding:20px;text-align:center;">
-        <p style="font-size:1rem;font-weight:700;margin-bottom:8px;">さらに詳しい記事はnoteで無料公開中</p>
-        <a href="https://note.com/okusokumoney" target="_blank" rel="noopener"
-          style="display:inline-block;background:#41c9b4;color:#fff;padding:10px 28px;border-radius:6px;font-weight:700;text-decoration:none;margin-top:6px;">
-          億速 note を見る →
-        </a>
-      </div>
-
-      <!-- 記事末シェアボタン -->
-      <div class="share-buttons" style="margin-top:24px;">
-        <span style="font-size:0.85rem;font-weight:700;color:#555;">この記事をシェア：</span>
-        <a href={xShareUrl} target="_blank" rel="noopener" class="share-btn share-x">X でシェア</a>
-        <a href={hatenaUrl} target="_blank" rel="noopener" class="share-btn share-hatena">はてブに追加</a>
       </div>
 
       <!-- コメント欄（Waline） -->
