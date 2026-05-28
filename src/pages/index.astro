@@ -7,9 +7,11 @@ import { getCollection } from 'astro:content';
 
 const PAGE_SIZE = 20;
 const allArticles = await getCollection('articles');
-const sorted = allArticles.sort((a, b) =>
-  new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
-);
+const sorted = allArticles.sort((a, b) => {
+  const dateDiff = new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+  if (dateDiff !== 0) return dateDiff;
+  return b.slug.localeCompare(a.slug);
+});
 const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
 const articles = sorted.slice(0, PAGE_SIZE);
 ---
