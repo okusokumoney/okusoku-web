@@ -60,7 +60,7 @@ tags: ["書籍解説", "思考法", "会社員"]
 
 正直に言えば、この本に「どの株を買えばいいか」は一切書いていない。実践的な投資テクニックを求めるなら別の本が適切だ。ただ「なぜ自分はいつも同じ失敗をするのか」に答えが欲しいなら、この本以上の選択肢は少ない。
 
-[楽天ブックスで「サイコロジー・オブ・マネー」を見る →](https://af.moshimo.com/af/c/click?a_id=5584862&p_id=56&pc_id=56&pl_id=637&url=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F16915229%2F){rel="noopener sponsored" target="_blank"}
+<a href="https://af.moshimo.com/af/c/click?a_id=5584862&p_id=56&pc_id=56&pl_id=637&url=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F16915229%2F" rel="noopener sponsored" target="_blank">楽天ブックスで「サイコロジー・オブ・マネー」を見る →</a>
 
 ## 読んだ後にやること
 
@@ -86,4 +86,4 @@ tags: ["書籍解説", "思考法", "会社員"]
 
 知識より行動、行動より習慣。資産形成で長期的に勝ち残る人の共通点は「感情に負けない仕組み」を持っていることだ。この一冊はその仕組みを作る最初の一歩になる。
 
-[楽天ブックスで「サイコロジー・オブ・マネー」を購入する →](https://af.moshimo.com/af/c/click?a_id=5584862&p_id=56&pc_id=56&pl_id=637&url=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F16915229%2F){rel="noopener sponsored" target="_blank"}
+<a href="https://af.moshimo.com/af/c/click?a_id=5584862&p_id=56&pc_id=56&pl_id=637&url=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F16915229%2F" rel="noopener sponsored" target="_blank">楽天ブックスで「サイコロジー・オブ・マネー」を購入する →</a>
