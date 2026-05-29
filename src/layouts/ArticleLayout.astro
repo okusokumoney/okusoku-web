@@ -6,8 +6,9 @@ export interface Props {
   description?: string;
   pubDate: string;
   category: string;
+  affiliate?: {label: string; url: string; description?: string}[];
 }
-const { title, description, pubDate, category } = Astro.props;
+const { title, description, pubDate, category, affiliate } = Astro.props;
 
 const MOSHIMO_RAKUTENBOOKS_AID = '5584862';
 const MOSHIMO_RAKUTEN_AID = '5584857';
@@ -107,6 +108,16 @@ const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\
       </div>
 
       <!-- ADSENSE_ARTICLE_BOTTOM -->
+
+      <!-- アフィリエイトCTA -->
+      {affiliate?.filter(a => !a.url.startsWith('AFFILIATE_')).map(a => (
+        <div class="affiliate-box">
+          <p style="font-size:0.72rem;color:#888;margin-bottom:6px;">※広告・アフィリエイトリンクを含みます</p>
+          <p style="font-weight:700;font-size:0.95rem;margin-bottom:4px;">{a.label}</p>
+          {a.description && <p style="font-size:0.85rem;color:#555;margin-bottom:8px;">{a.description}</p>}
+          <a href={a.url} target="_blank" rel="noopener sponsored" class="btn">詳しく見る →</a>
+        </div>
+      ))}
 
       <!-- 記事末シェアボタン -->
       <div class="share-buttons" style="margin-top:24px;">
