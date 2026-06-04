@@ -6,9 +6,10 @@ export interface Props {
   description?: string;
   pubDate: string;
   category: string;
+  type?: string;
   affiliate?: {label: string; url: string; description?: string}[];
 }
-const { title, description, pubDate, category, affiliate } = Astro.props;
+const { title, description, pubDate, category, type, affiliate } = Astro.props;
 
 const MOSHIMO_RAKUTENBOOKS_AID = '5584862';
 const MOSHIMO_RAKUTEN_AID = '5584857';
@@ -76,7 +77,7 @@ const pageUrl = Astro.url.href;
 const xShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}&via=okusokumoney`;
 const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\//, '')}`;
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} noindex={type === 'news'}>
   <Fragment slot="sidebar">
     <SideBar />
   </Fragment>
