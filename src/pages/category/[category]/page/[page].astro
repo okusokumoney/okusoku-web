@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
   for (const category of categories) {
     const filtered = allArticles
-      .filter(a => a.data.category === category)
+      .filter(a => a.data.category === category && a.data.type !== 'news')
       .sort((a, b) => { const d = new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime(); return d !== 0 ? d : b.slug.localeCompare(a.slug); });
     const totalPages = Math.ceil(filtered.length / PAGE_SIZE);
     for (let page = 2; page <= totalPages; page++) {

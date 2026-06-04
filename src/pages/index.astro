@@ -7,7 +7,8 @@ import { getCollection } from 'astro:content';
 
 const PAGE_SIZE = 20;
 const allArticles = await getCollection('articles');
-const sorted = allArticles.sort((a, b) => {
+const filtered = allArticles.filter(a => a.data.type !== 'news');
+const sorted = filtered.sort((a, b) => {
   const dateDiff = new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   if (dateDiff !== 0) return dateDiff;
   return b.slug.localeCompare(a.slug);

@@ -8,9 +8,9 @@ import { getCollection } from 'astro:content';
 export async function getStaticPaths() {
   const PAGE_SIZE = 20;
   const allArticles = await getCollection('articles');
-  const sorted = allArticles.sort((a, b) =>
-    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
-  );
+  const sorted = allArticles
+    .filter(a => a.data.type !== 'news')
+    .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
   const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
   return Array.from({ length: totalPages - 1 }, (_, i) => {
     const page = i + 2;
