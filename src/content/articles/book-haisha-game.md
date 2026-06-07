@@ -1,7 +1,7 @@
 ---
 title: "敗者のゲーム（原著第8版）要約｜会社員が投資で「負けない」ために知るべきこと"
 description: "チャールズ・エリスの名著『敗者のゲーム』を会社員向けに要約。インデックス投資が最適解である理由、長期・分散・低コストの実践法をわかりやすく解説。"
-pubDate: "2026-06-06T12:00:02"
+pubDate: "2026-05-28T14:19:47"
 category: "投資・NISA"
 type: "book"
 image: "/images/thumbs/book-haisha-game.jpg"

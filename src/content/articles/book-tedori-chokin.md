@@ -1,7 +1,7 @@
 ---
 title: "手取り17万円からの貯金の教科書 要約｜会社員が最初に押さえる節約の基本"
 description: "手取り17万円でも貯金はできる。横山光昭監修の本書が示す家計管理の基本と、会社員が今日から実践できる3つのポイントを解説する。"
-pubDate: "2026-05-22T14:27:38"
+pubDate: "2026-04-18T12:23:49"
 category: "節約"
 type: "book"
 image: "/images/thumbs/book-tedori-chokin.jpg"

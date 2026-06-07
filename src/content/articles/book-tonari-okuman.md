@@ -1,7 +1,7 @@
 ---
 title: "となりの億万長者〔新版〕要約｜会社員が学ぶべき資産形成の真実"
 description: "高収入なのに貯まらない、普通収入なのに億万長者。その違いをデータで解明した名著を会社員向けに要約。今日から実践できる資産形成の考え方を解説。"
-pubDate: "2026-06-04T12:00:01"
+pubDate: "2026-05-23T08:09:23"
 category: "お金の基本"
 type: "book"
 image: "/images/thumbs/book-tonari-okuman.jpg"

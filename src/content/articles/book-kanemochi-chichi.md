@@ -1,7 +1,7 @@
 ---
 title: "改訂版 金持ち父さん貧乏父さん 要約｜会社員が今すぐ知るべき3つの教え"
 description: "ロバート・キヨサキの名著を会社員目線で徹底解説。お金持ちと貧乏人の思考の違い、資産と負債の本質、会社員が読んだ後にとるべき具体的なアクションを紹介。"
-pubDate: "2026-05-31T12:00:02"
+pubDate: "2026-05-11T19:20:07"
 category: "お金の基本"
 type: "book"
 image: "/images/thumbs/book-kanemochi-chichi.jpg"

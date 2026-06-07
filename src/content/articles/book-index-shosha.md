@@ -1,7 +1,7 @@
 ---
 title: "インデックス投資は勝者のゲーム 要約｜会社員が知るべき3つの核心"
 description: "バンガード創業者ジョン・ボーグルが説く「コストを下げて市場に乗る」投資哲学を会社員向けに要約。NISAで始める前に読んでおきたい1冊の本質を解説。"
-pubDate: "2026-06-07T12:00:01"
+pubDate: "2026-05-31T14:28:01"
 category: "投資・NISA"
 type: "book"
 image: "/images/thumbs/book-index-shosha.jpg"

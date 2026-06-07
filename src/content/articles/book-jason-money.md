@@ -1,7 +1,7 @@
 ---
 title: "ジェイソン流お金の増やし方 改訂版 要約｜会社員が最初に読むべき投資入門"
 description: "厚切りジェイソン著「ジェイソン流お金の増やし方 改訂版」を会社員向けに要約。インデックス投資・節約・NISA活用の3つのポイントと、読後すぐ動けるアクションを解説。"
-pubDate: "2026-06-02T12:00:02"
+pubDate: "2026-05-16T13:21:36"
 category: "投資・NISA"
 type: "book"
 image: "/images/thumbs/book-jason-money.jpg"

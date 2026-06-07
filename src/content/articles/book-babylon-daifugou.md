@@ -1,7 +1,7 @@
 ---
 title: "バビロンの大富豪 要約｜会社員が今すぐ実践すべきお金の原則"
 description: "バビロンの大富豪の要点を会社員向けに解説。収入の10%を先取り貯蓄・増やす・守るという3原則が、現代の給与生活者にそのまま使える理由をわかりやすく整理した。"
-pubDate: "2026-06-01T12:00:02"
+pubDate: "2026-05-13T12:40:39"
 category: "お金の基本"
 type: "book"
 image: "/images/thumbs/book-babylon-daifugou.jpg"

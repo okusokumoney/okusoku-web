@@ -1,7 +1,7 @@
 ---
 title: "反応しない練習 要約と感想｜会社員のメンタルを守る仏教思考"
 description: "草薙龍瞬『反応しない練習』の要約・感想を会社員目線で解説。職場のストレスや人間関係の悩みに効く3つのポイントと、読後すぐに使える実践法を紹介。"
-pubDate: "2026-06-05T12:00:01"
+pubDate: "2026-05-26T20:43:23"
 category: "思考法"
 type: "book"
 image: "/images/thumbs/book-hannou-renshu.jpg"

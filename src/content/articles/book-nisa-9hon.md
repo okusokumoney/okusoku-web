@@ -1,7 +1,7 @@
 ---
 title: "新NISAはこの9本から選びなさい 要約｜会社員が最初に読むべき一冊"
 description: "セゾン投信創業者・中野晴啓が新NISA向けに厳選した9本のファンドを解説。何を買うか迷う会社員が選択の軸を手に入れるための一冊を徹底要約。"
-pubDate: "2026-05-13T19:38:44"
+pubDate: "2026-04-03T17:34:21"
 category: "投資・NISA"
 type: "book"
 image: "/images/thumbs/book-nisa-9hon.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "サイコロジー・オブ・マネー 要約｜会社員が読むべき「お金と心理」の教科書"
 description: "モーガン・ハウセル著『サイコロジー・オブ・マネー』を会社員向けに要約。投資で感情に負けない思考法と、今日から使える3つの行動指針を解説する。"
-pubDate: "2026-05-28T14:38:46"
+pubDate: "2026-05-02T20:26:11"
 category: "思考法"
 type: "book"
 image: "/images/thumbs/book-psychology-money.jpg"

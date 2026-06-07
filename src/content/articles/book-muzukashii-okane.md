@@ -1,7 +1,7 @@
 ---
 title: "「難しいことはわかりませんが、お金の増やし方を教えてください！」要約｜会社員が最初に読む投資本"
 description: "山崎元が「難しいことは抜き」で投資の本質を解説した名著。インデックス投資・NISA・証券会社の選び方まで、会社員が今日から動ける内容を要約・解説する。"
-pubDate: "2026-06-03T12:00:01"
+pubDate: "2026-05-20T19:02:23"
 category: "お金の基本"
 type: "book"
 image: "/images/thumbs/book-muzukashii-okane.jpg"

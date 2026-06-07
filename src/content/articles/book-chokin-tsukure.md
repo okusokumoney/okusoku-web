@@ -1,7 +1,7 @@
 ---
 title: "「貯金はこれでつくれます」要約｜節約オタクふゆこが教える会社員の貯金術"
 description: "節約オタクふゆこが語る、収入を増やさなくても貯金できる仕組みの作り方。固定費削減・先取り貯蓄・節約マインドの3軸で会社員が今日から実践できる内容を解説。"
-pubDate: "2026-05-19T09:41:23"
+pubDate: "2026-04-12T09:30:39"
 category: "節約"
 type: "book"
 image: "/images/thumbs/book-chokin-tsukure.jpg"

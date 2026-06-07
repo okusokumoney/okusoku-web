@@ -1,7 +1,7 @@
 ---
 title: "改訂版 お金の大学 要約｜会社員が今すぐ動くための5つの力"
 description: "両@リベ大が解説する「5つの力」を会社員目線で要約。貯める・稼ぐ・増やす・守る・使うの基本を押さえて、お金の不安をゼロに近づける実践ガイド。"
-pubDate: "2026-05-29T12:00:02"
+pubDate: "2026-05-05T11:01:23"
 category: "投資・NISA"
 type: "book"
 image: "/images/thumbs/book-okane-daigaku.jpg"
