@@ -1,7 +1,7 @@
 ---
 title: "株式投資の未来 要約｜シーゲル教授が説く会社員のための長期投資戦略"
 description: "ウォートン・スクール教授ジェレミー・シーゲルが「成長の罠」を実証データで解剖。NISAで何を買うか迷う会社員が知るべき長期投資の本質を要約・解説。"
-pubDate: "2026-05-11T12:00:00"
+pubDate: "2026-05-10T21:47:18"
 category: "投資・NISA"
 type: "book"
 image: "/images/thumbs/book-kabushiki-future.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "転職2.0 要約｜会社員が今すぐキャリアを見直すべき理由"
 description: "村上臣著『転職2.0』を会社員向けに徹底解説。スキルの棚卸し・タグ戦略・副業との連動など、キャリア自律に向けた具体的な実践ポイントをまとめた。"
-pubDate: "2026-05-15T12:00:00"
+pubDate: "2026-05-16T13:29:15"
 category: "副業"
 type: "book"
 image: "/images/thumbs/book-tensyoku-20.jpg"
