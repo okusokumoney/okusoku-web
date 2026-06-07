@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【生活費最適化⑧】「投資に回すお金がない」は収入の問題ではなかった・月8万円の先取り設計を作る考え方"
 image: "/images/thumbs/article-061.jpg"
 description: "あなたは毎月、いくらを投資に回せていますか？"

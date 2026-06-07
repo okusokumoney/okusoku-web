@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "お金持ちが実践する「インプットとアウトプット」の習慣・学びをお金に変える人の共通点"
 image: "/images/thumbs/article-053.jpg"
 description: "「億万長者思考」特別追加回 ／ 全14回予定"

@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【AI活用入門②】AIツールの選び方と使い分け入門・Claude・ChatGPT・Perplexity・Geminiの違いを知る"
 image: "/images/thumbs/article-016.jpg"
 description: "「AIを使ってみたいけど、どれを選べばいいかわからない」と感じていませんか？"

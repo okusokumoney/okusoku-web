@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【AI活用入門⑥】AIで副業の作業時間を半分にする自動化設計の3ステップ"
 image: "/images/thumbs/article-040.jpg"
 description: "副業の作業を終えたあと、「また2時間使ってしまった……」と感じたことはありませんか？"

@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【AI活用入門⑨】平日30分でAIが3つの収益ルートを同時に回す・会社員の複数収入自動化ロードマップ"
 image: "/images/thumbs/article-064.jpg"
 description: "あなたは今、副業収入の「柱」がいくつありますか？"

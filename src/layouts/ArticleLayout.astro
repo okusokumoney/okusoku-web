@@ -86,7 +86,7 @@ const pageUrl = Astro.url.href;
 const xShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}&via=okusokumoney`;
 const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\//, '')}`;
 ---
-<BaseLayout title={title} description={description} noindex={type === 'news'}>
+<BaseLayout title={title} description={description} noindex={type === 'news' || type === 'note'}>
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",

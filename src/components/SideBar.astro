@@ -1,43 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 
-// ============================================================
-// 外部RSSフィード（ビルド時取得）
-// ============================================================
-const EXTERNAL_FEEDS = [
-  { name: 'NHK経済ニュース', url: 'https://www.nhk.or.jp/rss/news/cat5.xml',     color: '#1a5fb4' },
-  { name: 'ITmedia AI+',    url: 'https://rss.itmedia.co.jp/rss/2.0/aiplus.xml', color: '#6a0dad' },
-  { name: 'ZUU online',     url: 'https://zuuonline.com/feed',                    color: '#2e7d32' },
-];
-
-function parseRSSItems(xml: string, limit = 4): { title: string; link: string }[] {
-  const items = [...xml.matchAll(/<item[\s>]([\s\S]*?)<\/item>/g)].slice(0, limit);
-  return items.map(m => {
-    const block = m[1];
-    const rawTitle = block.match(/<title>(?:<!\[CDATA\[)?([\s\S]*?)(?:\]\]>)?<\/title>/)?.[1] ?? '';
-    const link     = block.match(/<link>\s*(https?:\/\/[^\s<]+)\s*<\/link>/)?.[1]
-                  ?? block.match(/<guid[^>]*>\s*(https?:\/\/[^\s<]+)\s*<\/guid>/)?.[1] ?? '';
-    return { title: rawTitle.trim().replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>'), link };
-  }).filter(i => i.title && i.link);
-}
-
-const externalFeeds = await Promise.all(
-  EXTERNAL_FEEDS.map(async feed => {
-    try {
-      const res = await fetch(feed.url, {
-        signal: AbortSignal.timeout(6000),
-        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; okusoku-bot/1.0)' },
-      });
-      const xml = await res.text();
-      return { ...feed, items: parseRSSItems(xml, 4) };
-    } catch {
-      return { ...feed, items: [] };
-    }
-  })
-);
-// 全フィードの記事を混在させて日付順（取得順）でフラット化
-const allExternalItems = externalFeeds.flatMap(f => f.items).slice(0, 15);
-
 const allArticles = await getCollection('articles');
 const sorted = allArticles.sort((a, b) =>
   new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
@@ -91,22 +54,6 @@ const categoryColors: Record<string, string> = {
       ))}
     </ul>
   </div>
-
-  <!-- 外部サイト最新情報（混在表示） -->
-  {allExternalItems.length > 0 && (
-    <div class="sidebar-block">
-      <h2 class="sidebar-title">最新ニュース</h2>
-      <ul class="latest-list">
-        {allExternalItems.map(item => (
-          <li>
-            <a href={item.link} target="_blank" rel="noopener" class="latest-link ext-link">
-              {item.title.length > 38 ? item.title.slice(0, 38) + '…' : item.title}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )}
 
   <!-- アフィリエイト枠 -->
   <div class="sidebar-block">
@@ -184,6 +131,4 @@ const categoryColors: Record<string, string> = {
     background: #fff9e6;
   }
   .affiliate-banner:hover { background: #fff3cd; }
-  .ext-link { color: #1a5fb4; font-size: 0.8rem; }
-  .ext-link:hover { text-decoration: underline; background: #f5f5f5; }
 </style>

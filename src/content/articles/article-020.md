@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【お金の基本③】毎月3万円が自動で貯まる・先取り貯蓄の仕組みを作る3ステップ"
 image: "/images/thumbs/article-020.jpg"
 description: "あなたは毎月、給料日から数日後に「もう財布が軽い」と感じたことはありませんか？"

@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【副業の始め方⑩】月10万円を超えたら考えたい・副業収入を個人事業として育てる3つのステップ"
 image: "/images/thumbs/article-069.jpg"
 description: "「副業の始め方」第10回 ／ 全14回予定"

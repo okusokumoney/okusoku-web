@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "AIで副業収入を3倍にする人がやっている「プロンプト設計」の基本3要素"
 image: "/images/thumbs/article-052.jpg"
 description: "「AI活用入門」特別追加回 ／ 全14回予定"

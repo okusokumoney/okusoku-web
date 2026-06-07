@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【億万長者思考①】お金持ちと会社員の思考の違いはたった1つ・収入より先に変わること"
 image: "/images/thumbs/article-011.jpg"
 description: "あなたは「お金持ちと自分では、そもそも才能や環境が違う」と思っていませんか？"

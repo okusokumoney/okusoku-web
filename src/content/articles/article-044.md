@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【お金の基本⑦】生活防衛資金の正しい作り方・いくら必要でどこに置くべきか"
 image: "/images/thumbs/article-044.jpg"
 description: "あなたは今、突然の出費に対応できるだけのお金を手元に持っていますか？"

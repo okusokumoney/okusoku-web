@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【投資の考え方⑥】新NISAとは何か・会社員が知っておきたい3つの基本ポイント"
 image: "/images/thumbs/article-042.jpg"
 description: "「新NISAって結局何がいいの？」と思ったことはありますか？"

@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【お金の基本⑨】「貯金は安全」という思い込みが資産を減らす・インフレ・円安から守る3つの考え方"
 image: "/images/thumbs/article-062.jpg"
 description: "あなたは今、自分の貯金が「本当に守られている」と感じていますか？"

@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【お金の基本⑥】積立投資10年のシミュレーションと習慣化の3ステップ"
 image: "/images/thumbs/article-038.jpg"
 description: "「積立投資、いつか始めようと思っているんですが……」という言葉を、何度聞いたことでしょう。"

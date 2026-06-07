@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【生活費最適化⑥】「節約=我慢」だと思っている人が知らない支出の最適化とは"
 image: "/images/thumbs/article-043.jpg"
 description: "「節約」と聞いて、どんなイメージが浮かびますか？"

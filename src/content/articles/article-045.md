@@ -1,4 +1,5 @@
 ---
+type: "note"
 title: "【副業の始め方⑦】副業収入が毎月ブレる人に足りていない「リピーター設計」とは"
 image: "/images/thumbs/article-045.jpg"
 description: "副業で月10万円を稼ぎ続けている人と、波が激しい人の違いは何だと思いますか？"
