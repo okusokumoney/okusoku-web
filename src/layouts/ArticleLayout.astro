@@ -78,6 +78,26 @@ const xShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(ti
 const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\//, '')}`;
 ---
 <BaseLayout title={title} description={description} noindex={type === 'news'}>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description ?? '',
+    "datePublished": pubDate,
+    "dateModified": pubDate,
+    "author": {
+      "@type": "Person",
+      "name": "億速",
+      "url": "https://okusoku.com/about/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "億速",
+      "url": "https://okusoku.com",
+      "logo": { "@type": "ImageObject", "url": "https://okusoku.com/favicon.svg" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": Astro.url.href }
+  })} slot="head" />
   <Fragment slot="sidebar">
     <SideBar />
   </Fragment>
@@ -146,6 +166,20 @@ const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\
         </div>
       </div>
 
+      <!-- 著者バイオ -->
+      <div class="author-box">
+        <div class="author-icon">億</div>
+        <div class="author-info">
+          <p class="author-name">億速</p>
+          <p class="author-desc">30代・製造業エンジニア。会社員として働きながら新NISA・インデックス投資・副業・AI活用を実践中。「普通の会社員がお金で自由になる方法」をわかりやすく発信しています。</p>
+          <div class="author-links">
+            <a href="https://x.com/okusokumoney" target="_blank" rel="noopener">X（旧Twitter）</a>
+            <a href="https://note.com/okusokumoney" target="_blank" rel="noopener">note</a>
+            <a href="/about/">このサイトについて</a>
+          </div>
+        </div>
+      </div>
+
       <!-- コメント欄（Waline） -->
       <div style="margin-top:32px;">
         <h2 style="font-size:1rem;font-weight:700;margin-bottom:16px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">コメント</h2>
@@ -205,4 +239,11 @@ const hatenaUrl = `https://b.hatena.ne.jp/entry/s/${pageUrl.replace(/^https?:\/\
   .share-x:hover { background: #333; }
   .share-hatena { background: #00a4de; color: #fff; }
   .share-hatena:hover { background: #0086b8; }
+  .author-box { display: flex; gap: 16px; background: #f8f9fc; border: 1px solid #e0e6f0; border-radius: 10px; padding: 20px; margin: 32px 0 24px; }
+  .author-icon { width: 56px; height: 56px; border-radius: 50%; background: #0a1628; color: #41c9b4; font-size: 1.4rem; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .author-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; }
+  .author-desc { font-size: 0.82rem; color: #555; line-height: 1.7; margin-bottom: 10px; }
+  .author-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .author-links a { font-size: 0.78rem; color: #0a1628; border: 1px solid #0a1628; border-radius: 4px; padding: 3px 10px; text-decoration: none; }
+  .author-links a:hover { background: #0a1628; color: #fff; }
 </style>

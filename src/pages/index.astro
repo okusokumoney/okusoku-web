@@ -17,6 +17,18 @@ const totalPages = Math.ceil(sorted.length / PAGE_SIZE);
 const articles = sorted.slice(0, PAGE_SIZE);
 ---
 <BaseLayout title="トップ">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "億速",
+    "url": "https://okusoku.com",
+    "description": "会社員のためのお金・副業・AI活用メディア",
+    "publisher": {
+      "@type": "Person",
+      "name": "億速",
+      "url": "https://okusoku.com/about/"
+    }
+  })} slot="head" />
   <Fragment slot="sidebar">
     <SideBar />
   </Fragment>

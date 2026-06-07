@@ -28,8 +28,18 @@ export async function getStaticPaths() {
 }
 
 const { articles, totalPages, currentPage, category, total } = Astro.props;
+
+const CATEGORY_DESC: Record<string, string> = {
+  '投資・NISA': '新NISAの活用法からインデックス投資の基礎まで、会社員が資産形成を始めるための情報をわかりやすく解説します。',
+  '副業': '会社員が無理なく始められる副業の選び方・進め方・稼ぎ方を、実践的な視点から紹介します。',
+  'AI活用': 'ChatGPTをはじめとするAIツールを仕事・副業・日常で活用する具体的な方法を解説します。',
+  'お金の基本': '家計管理・保険・税金・銀行選びなど、会社員が知っておくべきお金の基礎知識をまとめています。',
+  '節約': '無理なく続けられる節約術・固定費削減・ポイント活用など、手取りを増やす実践的な方法を紹介します。',
+  '思考法': 'お金・副業・キャリアで成果を出すための考え方・習慣・マインドセットを解説します。',
+};
+const desc = CATEGORY_DESC[category] ?? '';
 ---
-<BaseLayout title={`${category}の記事一覧 ${currentPage}ページ目`}>
+<BaseLayout title={`${category}の記事一覧 ${currentPage}ページ目`} description={desc}>
   <Fragment slot="sidebar">
     <SideBar />
   </Fragment>
