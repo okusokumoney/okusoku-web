@@ -7,11 +7,8 @@ category: "投資・NISA"
 tags: ["NISA", "投資", "会社員", "資産形成"]
 affiliate:
   - label: "SBI証券でNISAを始める（無料）"
-    url: "https://example.com/sbi"
+    url: "AFFILIATE_SBI_URL"
     description: "口座開設数No.1。NISA口座も最短翌日開設。"
-  - label: "楽天証券でNISAを始める（無料）"
-    url: "https://example.com/rakuten"
-    description: "楽天ポイントで投資できる。楽天ユーザーにおすすめ。"
 ---
 
 会社員の多くが「NISAは聞いたことがある」と言います。でも実際に始めている人は少ない。理由は「難しそう」「失敗が怖い」という思い込みです。
@@ -46,11 +43,5 @@ NISAは銀行でも開設できますが、**証券会社一択**です。理由
 
 ---
 
-<div class="affiliate-box">
-  <p><strong>今すぐNISA口座を開設する（無料）</strong></p>
-  <p>SBI証券・楽天証券ともに口座開設は無料。最短5分で申し込めます。</p>
-  <a class="btn" href="https://example.com/sbi" target="_blank" rel="noopener sponsored">SBI証券で始める →</a>
-  <a class="btn" href="https://example.com/rakuten" target="_blank" rel="noopener sponsored" style="margin-left:8px;">楽天証券で始める →</a>
-</div>
 
 NISAは「やらない損」です。毎月1万円を20年積み立てた場合、通常口座とNISAで数十万円の差がつくこともあります。まず口座開設だけでも今日やっておきましょう。
