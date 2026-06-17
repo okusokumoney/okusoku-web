@@ -27,18 +27,24 @@ const BOOKS: Record<string, {title: string; author: string; desc: string; url: s
     { title: '株式投資の未来', author: 'ジェレミー・シーゲル', desc: '長期保有で配当再投資が最強である根拠を豊富なデータで解説。', url: 'https://books.rakuten.co.jp/rb/3689555/' },
     { title: 'インデックス投資は勝者のゲーム', author: 'ジョン・C・ボーグル', desc: 'バンガード創設者が説く低コスト投資哲学。NISA民必読。', url: 'https://books.rakuten.co.jp/rb/15489998/' },
     { title: '新NISAはこの9本から選びなさい', author: '中野晴啓', desc: '6000本超の投資信託から厳選した9本を解説。銘柄選びの基準が明快。', url: 'https://books.rakuten.co.jp/rb/17640860/' },
+    { title: 'イラストと図解で丸わかり！ 世界一やさしい新NISAの始め方', author: '小林 亮平', desc: 'イラストと図解で丸わかり！ 世界一やさしい新NISAの始め方の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/17787611/' },
+    { title: '月3000円からはじめる新NISA超入門', author: '横山光昭', desc: '月3000円からはじめる新NISA超入門の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/18041804/' },
   ],
   '副業': [
     { title: '毎月10万円をAIに稼いでもらう！ChatGPT副業の教科書', author: 'ChatGPTビジネス研究会', desc: 'AIを活用して副収入を得る具体的な手順を解説。会社員向け。', url: 'https://books.rakuten.co.jp/rb/17531420/' },
     { title: '転職2.0', author: '村上臣', desc: 'LinkedIn日本代表が教える副業・転職時代のキャリア戦略。', url: 'https://books.rakuten.co.jp/rb/16535816/' },
     { title: 'お金も知識も自信もない私に、稼げる副業を教えてください！！', author: '宮中清貴', desc: '初心者が副業で稼ぐための入門書。具体的な手順で解説。', url: 'https://books.rakuten.co.jp/rb/17537929/' },
     { title: 'ゼロから稼げるChatGPT入門', author: '加納敏彦', desc: '副業・ビジネスで稼ぐためのChatGPT活用術を職種別に解説。', url: 'https://books.rakuten.co.jp/rb/17726737/' },
+    { title: '年収UP・起業・自己実現できる！副業の教科書', author: '大林 尚朝', desc: '年収UP・起業・自己実現できる！副業の教科書の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/18208323/' },
+    { title: '会社員が働きながら月30万円を稼ぐ起業法', author: '新井 一', desc: '会社員が働きながら月30万円を稼ぐ起業法の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/18092206/' },
   ],
   'AI活用': [
     { title: '会社で使えるChatGPT', author: 'マスクド・アナライズ', desc: '個人業務からチーム導入まで、ChatGPT活用を1冊で完全理解。', url: 'https://books.rakuten.co.jp/rb/17939620/' },
     { title: 'ChatGPTを使い尽くす！深津式プロンプト読本', author: '深津貴之', desc: 'ビジネスシーンで使えるプロンプト設計を実践的に解説。', url: 'https://books.rakuten.co.jp/rb/17953362/' },
     { title: 'ChatGPT最強の仕事術', author: '池田朋弘', desc: '日常業務にChatGPTを組み込む実践的テクニックを解説。', url: 'https://books.rakuten.co.jp/rb/17550641/' },
     { title: 'ChatGPTと最新AIツールがまるごとわかる本', author: '', desc: 'ChatGPTから最新AIツールまで、使い方を網羅した入門書。', url: 'https://books.rakuten.co.jp/rb/18066430/' },
+    { title: 'AIのド素人ですが、10年後も仕事とお金に困らない方法を教えて下さい！ 最悪の未来でも自分だけが助かる本', author: '木内 翔大', desc: 'AIのド素人ですが、10年後も仕事とお金に困らない方法を教えて下さい！ 最悪の未来でも自分だけが助かる本の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/18194391/' },
+    { title: '目的別！ 仕事で使えるAI活用事典', author: '加納 敏彦', desc: '目的別！ 仕事で使えるAI活用事典の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/18037707/' },
   ],
   'お金の基本': [
     { title: '改訂版 お金の大学', author: '両@リベ大', desc: '家計・保険・投資の基本をすべて学べる一冊。新NISA対応。', url: 'https://books.rakuten.co.jp/rb/18041936/' },
@@ -46,18 +52,23 @@ const BOOKS: Record<string, {title: string; author: string; desc: string; url: s
     { title: '改訂版 金持ち父さん貧乏父さん', author: 'ロバート・キヨサキ', desc: 'お金の教育の重要性と資産形成の考え方を学ぶ世界的ベストセラー。', url: 'https://books.rakuten.co.jp/rb/12488205/' },
     { title: 'となりの億万長者〔新版〕', author: 'トマス・J・スタンリー', desc: '普通の会社員が億を築く生活習慣と思考法を研究した名著。', url: 'https://books.rakuten.co.jp/rb/12402860/' },
     { title: 'バビロンの大富豪', author: 'ジョージ・S・クレイソン', desc: '古代バビロンを舞台にお金の本質を寓話で解説。長く読まれる古典。', url: 'https://books.rakuten.co.jp/rb/5817140/' },
+    { title: '節約・貯蓄・投資の前に 今さら聞けないお金の超基本', author: '泉美智子', desc: '節約・貯蓄・投資の前に 今さら聞けないお金の超基本の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/15544558/' },
   ],
   '節約': [
     { title: '貯金はこれでつくれます', author: '節約オタクふゆこ', desc: '本当にお金が増える46のコツ。実践的な貯金術を解説。', url: 'https://books.rakuten.co.jp/rb/17717104/' },
     { title: '手取り17万円からの貯金の教科書', author: '横山光昭（監修）', desc: 'イラストでわかる、低収入でも実践できる節約・貯金術。', url: 'https://books.rakuten.co.jp/rb/14620066/' },
     { title: 'はじめての人のための3000円投資生活', author: '横山光昭', desc: '節約した3000円から始める積立投資の入門書。55万部超のベストセラー。', url: 'https://books.rakuten.co.jp/rb/14304056/' },
     { title: '図解 年収200万円からの貯金生活宣言', author: '横山光昭', desc: '低収入でも着実に貯金できる家計改善の全手順。', url: 'https://books.rakuten.co.jp/rb/12600757/' },
+    { title: '90日で貯める力をつける本', author: '横山光昭', desc: '90日で貯める力をつける本の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/17283241/' },
+    { title: 'この1冊でお金に困らない！節約ハック大百科', author: '松本 博樹', desc: 'この1冊でお金に困らない！節約ハック大百科の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/15665220/' },
   ],
   '思考法': [
     { title: 'サイコロジー・オブ・マネー', author: 'モーガン・ハウセル', desc: 'お金に関する行動心理を20の法則で解説した世界的ベストセラー。', url: 'https://books.rakuten.co.jp/rb/16915229/' },
     { title: '嫌われる勇気', author: '岸見一郎・古賀史健', desc: 'アドラー心理学で「他者の目を気にしない自分軸」を構築する。', url: 'https://books.rakuten.co.jp/rb/12570589/' },
     { title: '反応しない練習', author: '草薙龍瞬', desc: 'ムダな感情を手放して合理的に行動する思考法。お金にも応用できる。', url: 'https://books.rakuten.co.jp/rb/13315854/' },
     { title: 'となりの億万長者〔新版〕', author: 'トマス・J・スタンリー', desc: '普通の会社員が億を築く習慣と思考法を調査した名著。', url: 'https://books.rakuten.co.jp/rb/12402860/' },
+    { title: '「思考法」の必読書50冊、1冊で図解してみた', author: '鈴木 博毅', desc: '「思考法」の必読書50冊、1冊で図解してみたの解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/17724077/' },
+    { title: '新版 思考の整理学', author: '外山 滋比古', desc: '新版 思考の整理学の解説書。会社員向け。', url: 'https://books.rakuten.co.jp/rb/17748047/' },
   ],
 };
 
