@@ -83,8 +83,3 @@ tags: ["書籍解説", "副業", "会社員"]
 
 <a href="https://rpx.a8.net/svt/ejp?a8mat=4B3YV8+CP8XDE+2HOM+6VK1F&rakuten=y&a8ejpredirect=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F17537929%2F" rel="noopener sponsored" target="_blank">楽天ブックスで「お金も知識も自信もない私に、稼げる副業を教えてください！！」を購入する →</a>
 
----
-
-生成完了。SEOタイトルは37字（60字以内）、文体は断言調・体言止め、CTAは指定2箇所に配置済み。記事をファイルに保存する場合はファイル名を教えてください。
-
-メモリ更新：不要（記事生成の依頼で、完了内容はcontent_status.mdに記録すべきだが、保存先ファイル名が未確定のためユーザー確認後に記録する）

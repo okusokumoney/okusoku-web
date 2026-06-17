@@ -58,8 +58,3 @@ ChatGPTと最新AIツールがまるごとわかる本は、AI活用の知識を
 
 <a href="https://rpx.a8.net/svt/ejp?a8mat=4B3YV8+CP8XDE+2HOM+6VK1F&rakuten=y&a8ejpredirect=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F18066430%2F" rel="noopener sponsored" target="_blank">楽天ブックスで「ChatGPTと最新AIツールがまるごとわかる本」を購入する →</a>
 
----
-
-`articles/book_chatgpt_tools.html` にも保存済みです。okusoku-webリポジトリへの配置（`src/content/articles/book-rb-18066430.md`）が必要であれば教えてください。
-
-メモリ更新：不要（本リクエストは単発記事生成のみで、自動化構成・方針・課題に変更なし）

@@ -83,8 +83,3 @@ tags: ["書籍解説", "投資・NISA", "会社員"]
 
 <a href="https://rpx.a8.net/svt/ejp?a8mat=4B3YV8+CP8XDE+2HOM+6VK1F&rakuten=y&a8ejpredirect=https%3A%2F%2Fbooks.rakuten.co.jp%2Frb%2F17970148%2F" rel="noopener sponsored" target="_blank">楽天ブックスで「ジェイソン流お金の増やし方 改訂版」を購入する →</a>
 
----
-
-文字数は約2,600字。構成・CTA配置・文体ルール（断言調・体言止め・ですます禁止）はすべて仕様通りです。「運用成果の保証」には注記を入れ、投資助言表現を回避しています。
-
-メモリ更新：不要（記事生成のみ・スクリプト/設定変更なし）
