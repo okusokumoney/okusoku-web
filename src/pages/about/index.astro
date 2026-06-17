@@ -1,25 +1,59 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="このサイトについて">
-  <h1 style="font-size:1.5rem;font-weight:700;margin-bottom:24px;">このサイトについて</h1>
-  <div style="background:#fff;border-radius:12px;padding:32px;line-height:1.8;">
-    <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;">億速とは</h2>
-    <p>「億速」は、会社員がお金・副業・AIを活用して資産を増やすための実践情報を発信するメディアです。難しいお金の話をシンプルにまとめ、今日から使える情報を毎日更新しています。</p>
+<BaseLayout title="このサイトについて｜億速">
+  <div style="background:#fff;border-radius:12px;padding:32px;line-height:1.8;max-width:720px;">
 
-    <h2 style="font-size:1.1rem;font-weight:700;margin:24px 0 12px;">運営者</h2>
-    <p>ハンドルネーム：<strong>億速（okusokumoney）</strong></p>
-    <p style="margin-top:8px;">30代前半。製造業の工場でパソコン周りの何でも屋（社内SE）として働いています。20代で貯金も投資もしなかった後悔から、AI×自動化を使ってゼロから資産形成・副業収入の仕組みを作ることにしました。超慎重派なので動くまでは遅いですが、動くと決めたら二度と手を動かさなくていい仕組みを全力で作ります。</p>
-    <ul style="margin:16px 0 0 20px;">
-      <li><a href="https://note.com/okusokumoney" target="_blank" rel="noopener">note</a></li>
-      <li><a href="https://youtube.com/@okusokumoney" target="_blank" rel="noopener">YouTube</a></li>
-      <li><a href="https://x.com/okusokumoney" target="_blank" rel="noopener">X（旧Twitter）</a></li>
+    <h1 style="font-size:1.5rem;font-weight:700;margin-bottom:8px;">このサイトについて</h1>
+    <p style="font-size:0.85rem;color:#888;margin-bottom:32px;">最終更新：2026年6月</p>
+
+    <h2 style="font-size:1.1rem;font-weight:700;margin-bottom:12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">億速とは</h2>
+    <p>「億速」は、会社員がお金・副業・AIを使って資産をつくるための実践情報を発信するサイトです。</p>
+    <p>「難しくてよくわからない」「何から始めればいいかわからない」という人が、今日から動けるように書くことを意識しています。運用中の数字や実際にやってみた感想を含めて書いているので、教科書的な内容よりも泥臭い部分が多いかもしれません。</p>
+
+    <h2 style="font-size:1.1rem;font-weight:700;margin:32px 0 12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">運営者について</h2>
+
+    <div style="display:flex;gap:16px;align-items:flex-start;margin-bottom:24px;">
+      <div style="width:64px;height:64px;border-radius:50%;background:#0a1628;color:#41c9b4;font-size:1.5rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;">億</div>
+      <div>
+        <p style="font-weight:700;font-size:1rem;margin-bottom:4px;">億速（おくそく）</p>
+        <p style="font-size:0.85rem;color:#555;">30代前半・製造業エンジニア（社内SE）／愛知県在住</p>
+      </div>
+    </div>
+
+    <p>工場でパソコン周りの何でも屋として働いています。プログラミングからネットワーク設定、現場の困りごとまで、IT関係のことは何でも引き受けるという感じの仕事です。</p>
+
+    <p>正直に言うと、20代はお金のことをまともに考えていませんでした。給料が入ったら使って、残ったら貯金するくらいの感覚で、投資なんて「余裕のある人がやるもの」だと思っていました。NISAの話を職場で聞いても「いまはいいや」と何度か流していたのを覚えています。</p>
+
+    <p>30代になって、同期が家を買ったり子どもが生まれたりするのを見て、じわじわと焦りが出てきました。貯金通帳をひさしぶりにちゃんと見たとき、20代の自分が何もしてこなかった年数がそのまま数字に出ていて、ちょっと落ち込みました。</p>
+
+    <p>それからいろいろ調べ始めて、NISAを使った積立投資を2023年の秋からスタートしました。最初は月2万円から始めて、2024年の新NISA移行に合わせて月3万円に増やしています。今は毎月の積立に加えて、副業収入の一部も投資に回しています。</p>
+
+    <p>副業については、2022年頃からnoteで情報発信を始め、2024年にこのWebサイトを立ち上げました。ChatGPTが出てきてからは、記事の調査や文章の整理にAIをよく使うようになりました。工場の社内SEという仕事柄、効率化や自動化には興味があるので、AIとの相性はよかったと思っています。</p>
+
+    <p>「AIで月100万」とか「不労所得で自由に」みたいな話は正直ピンと来ないので、そういうことはあまり書きません。地道に積み立てて、固定費を削って、副業で少しずつ収入を増やすという、地味だけど続く方法を中心に発信しています。</p>
+
+    <h2 style="font-size:1.1rem;font-weight:700;margin:32px 0 12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">このサイトで発信していること</h2>
+    <ul style="margin:0 0 16px 20px;">
+      <li style="margin-bottom:8px;"><strong>新NISA・インデックス投資</strong>：積立の設定方法、銘柄の考え方、実際に運用してみた感想など</li>
+      <li style="margin-bottom:8px;"><strong>節約・固定費削減</strong>：スマホ・保険・サブスクの見直し、実際にやってみた記録</li>
+      <li style="margin-bottom:8px;"><strong>副業・AI活用</strong>：ChatGPT・Claudeを使った業務効率化、情報発信の進め方</li>
+      <li style="margin-bottom:8px;"><strong>お金の制度・税金</strong>：iDeCo、確定申告、住民税の仕組みなど、会社員が知っておくべきこと</li>
     </ul>
 
-    <h2 style="font-size:1.1rem;font-weight:700;margin:24px 0 12px;">広告・アフィリエイトについて</h2>
-    <p>本サイトはGoogle AdSense・楽天アフィリエイト・A8.net等の各種アフィリエイトプログラムに参加しており、記事内にプロモーションリンクを含む場合があります。アフィリエイトリンク経由でご購入いただいた場合、当サイトに紹介報酬が発生することがありますが、紹介する商品・サービスの選定に影響はありません。</p>
+    <h2 style="font-size:1.1rem;font-weight:700;margin:32px 0 12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">SNS・他の発信場所</h2>
+    <ul style="margin:0 0 16px 20px;">
+      <li style="margin-bottom:8px;"><a href="https://x.com/okusoku_money" target="_blank" rel="noopener">X（旧Twitter）@okusoku_money</a>：毎日1〜2本、お金とAIの気づきを投稿しています</li>
+      <li style="margin-bottom:8px;"><a href="https://note.com/okusokumoney" target="_blank" rel="noopener">note</a>：資産形成・副業・AI活用のまとめ記事を掲載中</li>
+      <li style="margin-bottom:8px;"><a href="https://youtube.com/@okusokumoney" target="_blank" rel="noopener">YouTube</a>：ショート動画で節約・投資のポイントを解説中</li>
+    </ul>
 
-    <h2 style="font-size:1.1rem;font-weight:700;margin:24px 0 12px;">コンテンツについて</h2>
+    <h2 style="font-size:1.1rem;font-weight:700;margin:32px 0 12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">広告・アフィリエイトについて</h2>
+    <p>本サイトはGoogle AdSense・楽天アフィリエイト・A8.net等のアフィリエイトプログラムに参加しており、記事内にプロモーションリンクを含む場合があります。アフィリエイトリンク経由でご購入いただいた場合、当サイトに紹介報酬が発生することがありますが、紹介する商品・サービスの選定に影響はありません。</p>
+
+    <h2 style="font-size:1.1rem;font-weight:700;margin:32px 0 12px;padding:8px 12px;background:#f5f5f5;border-left:4px solid #0a1628;">コンテンツについて</h2>
     <p>情報の正確性・最新性には十分注意していますが、投資・副業・税務等の判断はご自身の責任で行ってください。詳細は<a href="/disclaimer/">免責事項</a>をご覧ください。</p>
+    <p>記事の執筆・調査にはAIツール（ChatGPT・Claude等）を補助的に使用することがあります。内容の正確性については最終的に執筆者が確認・編集しています。</p>
+
   </div>
 </BaseLayout>
