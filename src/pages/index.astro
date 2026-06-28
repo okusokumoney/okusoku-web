@@ -33,6 +33,10 @@ const articles = sorted.slice(0, PAGE_SIZE);
     <SideBar />
   </Fragment>
 
+  <div class="site-intro">
+    <p>億速は、お金の知識ゼロから始めた会社員が実際の体験をもとに発信する、お金・投資・副業メディアです。NISA・iDeCo・節約・AI副業など、会社員が今すぐ実践できる情報を毎日更新しています。</p>
+  </div>
+
   <div class="page-header">
     <h1>最新記事</h1>
     <p class="article-count">全{sorted.length}件</p>
@@ -69,4 +73,5 @@ const articles = sorted.slice(0, PAGE_SIZE);
   .page-header h1 { font-size: 1.1rem; font-weight: 700; }
   .article-count { font-size: 0.82rem; color: #888; }
   .article-list { display: flex; flex-direction: column; gap: 10px; }
+  .site-intro { background: #f0f6ff; border-left: 4px solid #41c9b4; border-radius: 0 6px 6px 0; padding: 14px 18px; margin-bottom: 20px; font-size: 0.9rem; line-height: 1.8; color: #333; }
 </style>
