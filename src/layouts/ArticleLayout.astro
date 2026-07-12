@@ -86,7 +86,7 @@ const allBooks = BOOKS[category] ?? BOOKS['お金の基本'];
 const books = selectBooks(allBooks, seedDay);
 
 // 関連記事（同カテゴリ・最新3件）
-const allArticles = await getCollection('articles');
+const allArticles = await getCollection('articles', ({ data }) => data.draft !== true);
 const currentSlug = Astro.url.pathname.replace(/^\/articles\//, '').replace(/\/$/, '');
 const related = allArticles
   .filter(a => a.data.category === category && a.slug !== currentSlug && a.data.type !== 'news')

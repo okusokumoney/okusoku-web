@@ -6,7 +6,7 @@ import SideBar from '../components/SideBar.astro';
 import { getCollection } from 'astro:content';
 
 const PAGE_SIZE = 20;
-const allArticles = await getCollection('articles');
+const allArticles = await getCollection('articles', ({ data }) => data.draft !== true);
 const filtered = allArticles.filter(a => a.data.type !== 'news');
 const sorted = filtered.sort((a, b) => {
   const dateDiff = new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
